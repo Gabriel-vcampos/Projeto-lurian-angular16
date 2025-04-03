@@ -20,7 +20,7 @@ module.exports = {
             'bottom-4': 'right 10rem'
         },
         fontFamily: {
-            'teste': ['Open Sans'],
+            'teste': ['Open Sans', 'sans-serif'],
             'form': ['DM Serif Display'],
     },
     }

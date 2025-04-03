@@ -1,29 +1,26 @@
-<div class="ml-0 w-full  flex-col">
-    <h3 class="text-left font-semibold text-4xl pb-10 ">Comece Agora</h3>
-    <form action="#" method="post">
-        <div class="flex flex-col mt-20">
-            <label for="name">Nome </label>
-            <input type="text" id="name" name="name" required placeholder="Seu nome.." class="rounded-xl w-96 p-2 border-2">
-        </div>
-        <div class="flex flex-col mt-7">
-            <label for="email">Email </label>
-            <input type="email" id="email" name="email" required placeholder="name@example.com" class="rounded-xl w-96 p-2 border-2">
-        </div>
-
-        <div class="flex flex-col mt-7 placeholder-text">
-            <label for="password">Senha </label>
-            <input type="password" id="password" name="password" required placeholder="Digite sua senha" class="rounded-xl w-96 p-2  border-2">
-        </div>
-        <div class="mt-10 justify-center">
-            <input type="checkbox" required id="agree">
-            <label for="agree" required>  Li e aceito os <a href="#">termos e condições</a></label>
-        </div>
-        <div>
-            <button type="checkbox" class="bg-btn text-white rounded-xl p-2 w-80 mt-3 ml-5">Registrar</button>
-        </div>
-        <div class="mt-7">
-            
-            <p class="text-xl mt-19">Não possui uma conta? <a routerLink="/cadastro" class="text-indigo-500">Faça cadastro</a></p>
-        </div>
-    </form>
+<div class="md:ml-32 w-full mt-8 md:mt-24 flex-col max-w-[400px]">
+  <h3 class="text-left font-semibold text-3xl md:text-4xl pb-5">Bem-vindo de volta!</h3>
+  <p class="font-normal text-sm md:text-base">Insira suas credenciais para acessar sua conta.</p>
+  <form action="#" method="post">
+    <div class="flex flex-col mt-4 md:mt-7">
+      <label for="email">Email </label>
+      <input type="email" id="email" name="email" required placeholder="name@example.com" 
+             class="rounded-xl w-full p-2 border-2">
+    </div>
+    <div class="flex flex-col mt-4 md:mt-7 placeholder-text">
+      <label for="password">Senha <a class="ml-4 md:ml-52 text-blue-700 hover:underline" href="">Esqueceu a senha?</a> </label>
+      <input type="password" id="password" name="password" required placeholder="Digite sua senha" 
+             class="rounded-xl w-full p-2 border-2">
+    </div>
+    <div class="mt-3 md:ml-2 pb-4 justify-center">
+      <input type="checkbox" id="agree">
+      <label for="agree" required> Lembrar-me</label>
+    </div>
+    <div class="flex justify-center md:block">
+      <button type="checkbox" class="bg-btn text-white rounded-xl p-2 w-full md:w-80 mt-2 md:ml-7">Entrar</button>
+    </div>
+    <div class="mt-4 md:mt-7 text-center md:text-left">
+      <p class="text-lg md:text-xl md:ml-6">Não possui uma conta? <a routerLink="/cadastro" class="text-blue-700 hover:font-semibold">Faça cadastro</a></p>
+    </div>
+  </form>
 </div>
