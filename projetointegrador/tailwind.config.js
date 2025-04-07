@@ -25,7 +25,7 @@ module.exports = {
             'manequim': ['Alegreya Sans SC'],
         },
     boxShadow: {
-      'custom': '0px 4px 10px rgba(0, 0, 0, 0.6)',
+      'custom': '0px 2px 8px rgba(0, 0, 0, 0.6)',
         },
 },
   plugins: [],
