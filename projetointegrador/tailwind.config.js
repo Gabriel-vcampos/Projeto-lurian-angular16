@@ -23,6 +23,7 @@ module.exports = {
             'teste': ['Open Sans', 'sans-serif'],
             'form': ['DM Serif Display'],
             'manequim': ['Alegreya Sans SC'],
+            'einstein': ['Albert Sans'],
         },
     boxShadow: {
       'custom': '0px 2px 8px rgba(0, 0, 0, 0.6)',
