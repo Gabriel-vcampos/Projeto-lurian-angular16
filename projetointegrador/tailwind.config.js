@@ -23,8 +23,11 @@ module.exports = {
             'teste': ['Open Sans', 'sans-serif'],
             'form': ['DM Serif Display'],
             'manequim': ['Alegreya Sans SC'],
-    },
-    }
+        },
+    boxShadow: {
+      'custom': '10px 10px 20px rgba(0, 0, 0, 0.5)',
+        },
 },
   plugins: [],
+}
 }
