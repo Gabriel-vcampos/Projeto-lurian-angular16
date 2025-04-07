@@ -22,6 +22,7 @@ module.exports = {
         fontFamily: {
             'teste': ['Open Sans', 'sans-serif'],
             'form': ['DM Serif Display'],
+            'manequim': ['Alegreya Sans SC'],
     },
     }
 },
