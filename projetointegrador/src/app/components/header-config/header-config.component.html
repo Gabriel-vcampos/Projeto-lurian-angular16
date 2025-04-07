@@ -1,32 +1,35 @@
-<header class="flex w-full justify-between items-center gap-2 mt-8 ml-36 pl-4">
-    <!-- Adicionei ml-36 (mesma largura da sidebar) e pl-4 para dar um pequeno padding -->
-    <div>
-        <input
-            class="border-2 rounded-md ml-2 shadow-md py-1 px-2"
-            placeholder=" Pesquisar"
-            type="search"
-            name="buscaLocal"
-            id="buscaLocal"
-        />
-        <button class="rounded-lg bg-black text-white px-3 shadow-md ml-2 py-1">
-            Buscar
-        </button>
+<header class="flex flex-col sm:flex-row w-full justify-between items-center gap-4 mt-8 px-4">
+    <!-- Campo de busca -->
+    <div class="flex flex-col sm:flex-row items-center w-full sm:w-auto">
+      <input
+        class="border-2 rounded-md shadow-md py-1 px-3 w-full sm:w-auto"
+        placeholder="Pesquisar"
+        type="search"
+        name="buscaLocal"
+        id="buscaLocal"
+      />
+      <button class="mt-2 sm:mt-0 sm:ml-2 rounded-lg bg-black text-white px-4 py-1 shadow-md w-full sm:w-auto">
+        Buscar
+      </button>
     </div>
-    <div class="">
-        <a class="flex items-center mr-2 gap-1" routerLink="/">
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                class="size-5"
-            >
-                <path
-                    fill-rule="evenodd"
-                    d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-5.5-2.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0ZM10 12a5.99 5.99 0 0 0-4.793 2.39A6.483 6.483 0 0 0 10 16.5a6.483 6.483 0 0 0 4.793-2.11A5.99 5.99 0 0 0 10 12Z"
-                    clip-rule="evenodd"
-                />
-            </svg>
-            <span>Olá, Arthur</span>
-        </a>
+  
+    <!-- Perfil -->
+    <div class="w-full sm:w-auto flex justify-center sm:justify-end">
+      <a class="flex items-center gap-2 text-sm sm:text-base" routerLink="/">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          class="w-5 h-5"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-5.5-2.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0ZM10 12a5.99 5.99 0 0 0-4.793 2.39A6.483 6.483 0 0 0 10 16.5a6.483 6.483 0 0 0 4.793-2.11A5.99 5.99 0 0 0 10 12Z"
+            clip-rule="evenodd"
+          />
+        </svg>
+        <span>Olá, Arthur</span>
+      </a>
     </div>
-</header>
+  </header>
+  
