@@ -1,49 +1,59 @@
-<footer class="mt-7">
-    <div class="grid grid-cols-4 gap-3">
-        <div class="mx-3">
-            <h2 class="mb-3 v font-teste font-bold">EMPRESA</h2>
-            <ul class="">
-                <li><a class="font-teste hover:font-bold" routerLink="/login">Razão</a></li>
-                <li><a class="font-teste hover:font-bold" routerLink="/">Grupo Lurian</a></li>
-                <li><a class="font-teste hover:font-bold" routerLink="/">Sustentabilidade</a></li>
-                <li><a class="font-teste hover:font-bold" routerLink="/">Trabalhe conosco</a></li>
-            </ul>
+<footer class="mt-14 bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            <!-- Company Column -->
+            <div class="sm:col-span-1">
+                <h2 class="mb-4 text-lg font-bold text-gray-900 uppercase tracking-wider">EMPRESA</h2>
+                <ul class="space-y-3">
+                    <li><a class="text-gray-600 hover:text-gray-900 hover:font-medium transition-colors duration-200" routerLink="/login">Sobre</a></li>
+                    <li><a class="text-gray-600 hover:text-gray-900 hover:font-medium transition-colors duration-200" routerLink="/">Grupo Lurian</a></li>
+                    <li><a class="text-gray-600 hover:text-gray-900 hover:font-medium transition-colors duration-200" routerLink="/">Sustentabilidade</a></li>
+                    <li><a class="text-gray-600 hover:text-gray-900 hover:font-medium transition-colors duration-200" routerLink="/">Trabalhe conosco</a></li>
+                </ul>
+            </div>
+
+            <!-- Legal Column -->
+            <div class="sm:col-span-1">
+                <h2 class="mb-4 text-lg font-bold text-gray-900 uppercase tracking-wider">TERMOS LEGAIS</h2>
+                <ul class="space-y-3">
+                    <li><a class="text-gray-600 hover:text-gray-900 hover:font-medium transition-colors duration-200" routerLink="/">Legal</a></li>
+                    <li><a class="text-gray-600 hover:text-gray-900 hover:font-medium transition-colors duration-200" routerLink="/">Política de privacidade</a></li>
+                    <li><a class="text-gray-600 hover:text-gray-900 hover:font-medium transition-colors duration-200" routerLink="/">Política de cookie</a></li>
+                    <li><a class="text-gray-600 hover:text-gray-900 hover:font-medium transition-colors duration-200" routerLink="/">Sitemap</a></li>
+                </ul>
+            </div>
+
+            <!-- Social Media Column -->
+            <div class="sm:col-span-2 lg:col-span-2">
+                <h2 class="mb-4 text-lg font-bold text-gray-900 uppercase tracking-wider">ESTAMOS EM:</h2>
+                <div class="flex space-x-4">
+                    <a routerLink="/" class="text-gray-400 hover:text-blue-600 transition-colors duration-200">
+                        <img src="/assets/akar-icons_facebook-fill.svg" alt="Facebook" class="w-8 h-8 hover:scale-110 transition-transform duration-200">
+                    </a>
+                    <a routerLink="/" class="text-gray-400 hover:text-pink-600 transition-colors duration-200">
+                        <img src="/assets/entypo-social_instagram-with-circle.svg" alt="Instagram" class="w-8 h-8 hover:scale-110 transition-transform duration-200">
+                    </a>
+                    <a routerLink="/" class="text-gray-400 hover:text-blue-400 transition-colors duration-200">
+                        <img src="/assets/ant-design_twitter-circle-filled.svg" alt="Twitter" class="w-8 h-8 hover:scale-110 transition-transform duration-200">
+                    </a>
+                </div>
+                
+                <!-- Optional: Newsletter Signup -->
+                <div class="mt-6">
+                    <h3 class="text-sm font-medium text-gray-900 mb-2">ASSINE NOSSA NEWSLETTER</h3>
+                    <div class="flex">
+                        <input type="email" placeholder="Seu e-mail" class="px-4 py-2 w-full rounded-l-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-r-lg transition-colors duration-200">
+                            Enviar
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="mx-3">
-            <h2 class="mb-3 text-lg font-teste font-bold">TERMOS LEGAIS E CONDIÇÕES</h2>
-            <ul class="">
-                <li><a class="font-teste hover:font-bold" routerLink="/">Legal</a></li>
-                <li><a class="font-teste hover:font-bold" routerLink="/">Política de privacidade</a></li>
-                <li><a class="font-teste hover:font-bold" routerLink="/">Política de cookie</a></li>
-                <li><a class="font-teste hover:font-bold" routerLink="/">Sitemap</a></li>
-            </ul>
-        </div>
-        <div class="mx-56 col-span-2">
-            <h2 class="mb-4 text-lg font-teste font-bold">ESTAMOS EM:</h2>
-            <div class="flex">
-                <a class="mx-2" routerLink="/">
-                  <img 
-                    src="/assets/akar-icons_facebook-fill.svg" 
-                    alt="" 
-                    class="w-6 h-6 transform scale-90 hover:scale-125 transition-transform duration-300"
-                  >
-                </a>
-                <a class="mx-2" routerLink="/">
-                  <img 
-                    src="/assets/entypo-social_instagram-with-circle.svg" 
-                    alt="" 
-                    class="w-6 h-6 transform scale-90 hover:scale-125 transition-transform duration-300"
-                  >
-                </a>
-                <a class="mx-2" routerLink="/">
-                  <img 
-                    src="/assets/ant-design_twitter-circle-filled.svg" 
-                    alt="" 
-                    class="w-6 h-6 transform scale-90 hover:scale-125 transition-transform duration-300"
-                  >
-                </a>
-              </div>
-              
+
+        <!-- Copyright -->
+        <div class="mt-12 pt-6 border-t border-gray-200 text-center text-gray-500 text-sm">
+            <p>&copy; 2023 Lurian. Todos os direitos reservados.</p>
         </div>
     </div>
 </footer>
