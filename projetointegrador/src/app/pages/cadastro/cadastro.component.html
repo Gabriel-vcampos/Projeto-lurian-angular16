@@ -1,20 +1,25 @@
-<app-header-log class="sticky top-0 "></app-header-log>
+<app-header-log class="sticky top-0"></app-header-log>
+
 <main class="w-full">
-    <section class="w-full flex flex-col justify-center" >
+  <section class="w-full flex flex-col justify-center">
+    <div class="flex flex-col md:flex-row w-full min-h-screen">
 
-        <div class=" w-full flex justify-center">
-            
-            
+      <!-- Formulário - ocupa tudo no mobile, metade no desktop -->
+      <div class="w-full md:w-1/2 flex justify-center items-center px-4 py-8 md:p-10">
+        <div class="w-full max-w-md">
+          <!-- Logo centralizada -->
+          <a routerLink="/" routerLinkActive="active-link">
+            <img src="/assets/logo12.png" alt="Logo da marca" class="mx-auto mb-6 w-32 md:w-40" />
+          </a>
+          <!-- Formulário -->
+          <app-form-sign-in class="w-full"></app-form-sign-in>
         </div>
-        <div style="height: 95vh;" >
+      </div>
 
-        <div class="container pl-10 pr-10 pt-5 bg-[url('/assets/fundo.png')] bg-no-repeat h-full   bg-right max-h-full max-w-full">
-            <a routerLink="/"  routerLinkActive="active-link"><img src="/assets/logo12.png" alt="Logo da marca" class="mx-auto mt-3"></a>
-            <app-form-sign-in class="w-full p-10  justify-left flex"></app-form-sign-in>
-        
-        </div>
-       
+      <!-- Imagem - visível só em telas médias pra cima -->
+      <div class="hidden md:block md:w-1/2">
+        <img src="assets/fundo.png" alt="Modelo" class="object-cover w-full h-full" />
+      </div>
     </div>
-
-</section>
+  </section>
 </main>

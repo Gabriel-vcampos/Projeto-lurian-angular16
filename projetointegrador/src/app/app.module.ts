@@ -25,6 +25,11 @@ import { RouterModule } from '@angular/router';
 import { routes } from './app.routes';
 import { TecidosComponent } from './components/tecidos/tecidos.component';
 import { AgendamentoModule } from './pages/agendamento/agendamento.module';
+import { OrdersComponent } from './pages/orders/orders.component';
+import { NewScheduleComponent } from './pages/new-schedule/new-schedule.component';
+import { OrdersModule } from './pages/orders/orders.module';
+import { ResetPasswordModule } from './pages/reset-password/reset-password.module';
+import { NewScheduleModule } from './pages/new-schedule/new-schedule.module';
 
 @NgModule({
   declarations: [
@@ -32,7 +37,7 @@ import { AgendamentoModule } from './pages/agendamento/agendamento.module';
     AgendamentoComponent,
     HomeComponent,
     CadastroComponent,
-    LoginComponent, 
+    LoginComponent,
     TestesComponent
   ],
   imports: [
@@ -59,8 +64,11 @@ import { AgendamentoModule } from './pages/agendamento/agendamento.module';
     BgManequimmodule,
     FooterModule,
     FormLoginModule,
-    TecidosModule
-],
+    TecidosModule,
+    OrdersModule,
+    NewScheduleModule,
+    ResetPasswordModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
