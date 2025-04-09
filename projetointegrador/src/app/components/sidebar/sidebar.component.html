@@ -1,21 +1,18 @@
 <!-- Botão para abrir menu lateral (visível apenas no mobile) -->
 <button
-  class="md:hidden fixed top-4 left-4 z-50 bg-slate-950 text-white p-2 rounded"
+  class="md:hidden  top-4 left-4 z-50 bg-slate-950 text-white p-2 rounded"
   onclick="document.getElementById('sidebar').classList.toggle('-translate-x-full')"
 >
   ☰
 </button>
 
-<!-- Sidebar -->
 <aside
   id="sidebar"
-  class="w-36 h-screen bg-slate-950 fixed left-0 top-0 transform transition-transform duration-300 ease-in-out -translate-x-full md:translate-x-0 z-40"
+  class="w-36 h-screen bg-slate-950  left-0 top-0 transform transition-transform duration-300 ease-in-out -translate-x-full md:translate-x-0 z-40"
 >
   <div class="flex flex-col h-full">
-    <!-- Logo -->
     <img class="mx-auto mt-6 mb-8" src="assets/logo 2.png" alt="Logo da Loja" />
 
-    <!-- Navegação -->
     <div class="flex flex-col gap-1 px-2">
       <a
         class="text-white py-2 px-3 rounded hover:text-black hover:bg-slate-50 focus:bg-slate-50 focus:text-black transition-colors"

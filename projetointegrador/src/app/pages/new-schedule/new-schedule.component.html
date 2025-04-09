@@ -1,0 +1,143 @@
+<main class="w-full h-screen flex overflow-hidden">
+  <app-sidebar></app-sidebar>
+
+  <div class="w-full flex flex-col">
+    <app-header-config></app-header-config>
+
+    <div class="flex justify-between items-center px-6 mt-6">
+      <h2 class="font-semibold text-2xl">Novo Agendamento</h2>
+      <button class="bg-black text-white px-4 py-2 rounded shadow-md">
+        + Novo Agendamento
+      </button>
+    </div>
+
+    <hr class="my-4 mx-6 shadow" />
+
+    <form class="flex flex-col px-20 pb-10 text-sm font-medium">
+
+      <div class="flex w-full mb-3">
+        <button type="button" disabled class="flex items-center gap-2 border border-black px-4 py-2 rounded text-sm">
+          <i class="fas fa-map-marker-alt"></i> Endereço
+        </button>
+        <input
+          type="text"
+          [(ngModel)]="agendamento.endereco"
+          name="endereco"
+          class="ml-2 flex-1 border border-black rounded px-3 py-2"
+        />
+
+        <button type="button" disabled class="ml-2 flex items-center gap-2 border border-black px-4 py-2 rounded text-sm">
+          <i class="fas fa-hashtag"></i> Número
+        </button>
+        <input
+          type="text"
+          [(ngModel)]="agendamento.numero"
+          name="numero"
+          placeholder="Número"
+          class="ml-2 w-[100px] border border-black rounded px-3 py-2"
+        />
+
+        <button type="button" disabled class="ml-2 flex items-center gap-2 border border-black px-4 py-2 rounded text-sm">
+          <i class="fas fa-barcode"></i> CEP
+        </button>
+        <input
+          type="text"
+          [(ngModel)]="agendamento.cep"
+          name="cep"
+          placeholder="CEP"
+          class="ml-2 w-[120px] border border-black rounded px-3 py-2"
+        />
+      </div>
+
+      <div class="flex w-full mb-3">
+        <button type="button" disabled class="flex items-center gap-2 border border-black px-4 py-2 rounded text-sm">
+          <i class="fas fa-phone"></i> Contato
+        </button>
+        <input
+          type="text"
+          [(ngModel)]="agendamento.contato"
+          name="contato"
+          class="ml-2 w-full border border-black rounded px-3 py-2"
+        />
+      </div>
+
+      <div class="flex items-center mb-3">
+        <button type="button" class="flex items-center gap-2 border border-black px-4 py-2 rounded text-sm">
+          <i class="fas fa-plus"></i> Número do Pedido
+        </button>
+        <span class="ml-2 text-xs font-semibold px-3 py-2 border border-gray-400 rounded bg-gray-100">
+          {{ agendamento.numeroPedido }}
+        </span>
+      </div>
+
+      <div class="flex w-full mb-3">
+        <button type="button" disabled class="flex items-center gap-2 border border-black px-4 py-2 rounded text-sm">
+          <i class="fas fa-align-left"></i> Descrição do Pedido
+        </button>
+        <input
+          type="text"
+          [(ngModel)]="agendamento.descricaoPedido"
+          name="descricaoPedido"
+          class="ml-2 flex-1 border border-black rounded px-3 py-2"
+        />
+      </div>
+
+      <div class="flex w-full mb-3">
+        <button type="button" disabled class="flex items-center gap-2 border border-black px-4 py-2 rounded text-sm">
+          <i class="fas fa-user"></i> Profissional
+        </button>
+        <select
+          [(ngModel)]="agendamento.profissional"
+          name="profissional"
+          class="ml-2 border border-black rounded px-3 py-2"
+        >
+          <option value="">Selecione</option>
+          <option value="Lurdes M. V.">Lurdes M. V.</option>
+          <option value="João P.">João P.</option>
+        </select>
+      </div>
+
+      <div class="flex w-full mb-3">
+        <button type="button" disabled class="flex items-center gap-2 border border-black px-4 py-2 rounded text-sm">
+          <i class="fas fa-calendar-alt"></i> Data
+        </button>
+        <input
+          type="date"
+          [(ngModel)]="agendamento.data"
+          name="data"
+          class="ml-2 w-[160px] border border-black rounded px-3 py-2"
+        />
+
+      </div>
+      <div class="flex w-full mb-3">
+
+        <button type="button" disabled class=" flex items-center gap-2 border border-black px-4 py-2 rounded text-sm">
+          <i class="fas fa-clock"></i> Horário
+        </button>
+        <input
+          type="time"
+          [(ngModel)]="agendamento.horario"
+          name="horario"
+          class="ml-2 w-[140px] border border-black rounded px-3 py-2"
+        />
+      </div>
+    </form>
+
+    <div class="flex mt-auto justify-end gap-4 px-6 pb-6">
+      <button
+        type="button"
+        (click)="cancelar()"
+        class="border border-black px-6 py-2 rounded flex items-center gap-2"
+      >
+        <i class="fas fa-times-circle"></i> Cancelar
+      </button>
+      <button
+        type="button"
+        (click)="salvar()"
+        class="bg-black text-white px-6 py-2 rounded flex items-center gap-2"
+      >
+        <i class="fas fa-save"></i> Salvar
+      </button>
+    </div>
+  </div>
+</main>

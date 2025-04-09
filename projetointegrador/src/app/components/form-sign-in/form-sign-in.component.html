@@ -1,30 +1,42 @@
-<div class="ml-32 w-full mt-24">
-    <h3 class="text-left font-semibold text-4xl pb-5 ">Comece Agora</h3>
-    <p class="font-normal">Insira suas informações para se cadastrar</p>
-    <form action="#" method="post">
-        <div class="flex flex-col mt-12">
-            <label for="name">Nome </label>
-            <input type="text" id="name" name="name" required placeholder="Seu nome.." class="rounded-xl w-96 p-2 border-2">
-        </div>
-        <div class="flex flex-col mt-7">
-            <label for="email">Email </label>
-            <input type="email" id="email" name="email" required placeholder="name@example.com" class="rounded-xl w-96 p-2 border-2">
-        </div>
+<div class="w-full px-4 4">
+  <h3 class="text-left font-semibold text-3xl md:text-4xl pb-4">Comece Agora</h3>
+  <p class="font-normal text-base">Insira suas informações para se cadastrar</p>
 
-        <div class="flex flex-col mt-7 placeholder-text">
-            <label for="password">Senha </label>
-            <input type="password" id="password" name="password" required placeholder="Digite sua senha" class="rounded-xl w-96 p-2  border-2">
-        </div>
-        <div class="mt-4 ml-7 pb-4 justify-center">
-            <input type="checkbox" required id="agree">
-            <label for="agree" required>  Li e eu concordo com os <a class="text-blue-700 hover:underline" href="#">termos e condições</a></label>
-        </div>
-        <div>
-            <button type="checkbox" class="bg-btn text-white rounded-xl p-2 w-80 mt-2 ml-7">Registrar</button>
-        </div>
-        <div class="mt-7">
-            
-            <p class=" text-xl mt-19 ml-14">Já possui uma conta? <a routerLink="/login" class="text-blue-700 hover:font-semibold">Faça login</a></p>
-        </div>
-    </form>
+  <form action="#" method="post" class="mt-10 mx-auto max-w-2xl">
+    <div class="flex flex-col gap-6">
+      <div class="flex flex-col">
+        <label for="name">Nome</label>
+        <input type="text" id="name" name="name" required placeholder="Seu nome.." class="rounded-xl w-full p-2 border-2" />
+      </div>
+
+      <div class="flex flex-col">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required placeholder="name@example.com" class="rounded-xl w-full p-2 border-2" />
+      </div>
+
+      <div class="flex flex-col">
+        <label for="password">Senha</label>
+        <input type="password" id="password" name="password" required placeholder="Digite sua senha" class="rounded-xl w-full p-2 border-2" />
+      </div>
+
+      <div class="flex items-start gap-2">
+        <input type="checkbox" required id="agree" />
+        <label for="agree" class="text-sm">
+          Li e eu concordo com os
+          <a class="text-blue-700 hover:underline" href="#">termos e condições</a>
+        </label>
+      </div>
+
+      <div>
+        <button type="submit" class="bg-btn text-white rounded-xl p-2 w-full">Registrar</button>
+      </div>
+
+      <div class="text-center mt-6">
+        <p class="text-base">
+          Já possui uma conta?
+          <a routerLink="/login" class="text-blue-700 hover:font-semibold">Faça login</a>
+        </p>
+      </div>
+    </div>
+  </form>
 </div>
