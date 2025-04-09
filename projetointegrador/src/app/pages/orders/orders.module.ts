@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { OrdersComponent } from './orders.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HeaderLogModule } from "../../components/header-log/header-log.module";
+import { AppRoutingModule } from 'src/app/app-routing.module';
 
 
 
@@ -10,8 +12,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
-  ],
+    ReactiveFormsModule,
+    HeaderLogModule,
+    AppRoutingModule
+],
   exports:[
     OrdersComponent
 

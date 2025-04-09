@@ -16,9 +16,14 @@ export class ResetPasswordComponent {
   confirmPassword: string = '';
 
   resetPassword() {
-    // Aqui você simularia o envio do e-mail
+    if(this.email){
     console.log('Enviando redefinição para:', this.email);
     this.showConfirmStep = true;
+  }
+    else{
+      alert("Email deve ser preenchido!")
+      return
+    }
   }
 
   submitNewPassword() {

@@ -38,7 +38,7 @@ import { NewScheduleModule } from './pages/new-schedule/new-schedule.module';
     HomeComponent,
     CadastroComponent,
     LoginComponent,
-    TestesComponent
+    TestesComponent,
   ],
   imports: [
     RouterModule,

@@ -14,7 +14,6 @@ import { TabelaPedidosModule } from 'src/app/components/tabela-pedidos/tabela-pe
     SidebarModule,
     HeaderConfigModule,
     SidebarModule,
-    
     TabelaPedidosModule
 
     
