@@ -31,6 +31,7 @@ import { OrdersModule } from './pages/orders/orders.module';
 import { ResetPasswordModule } from './pages/reset-password/reset-password.module';
 import { NewScheduleModule } from './pages/new-schedule/new-schedule.module';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +40,7 @@ import { NewScheduleModule } from './pages/new-schedule/new-schedule.module';
     CadastroComponent,
     LoginComponent,
     TestesComponent,
+ 
   ],
   imports: [
     RouterModule,

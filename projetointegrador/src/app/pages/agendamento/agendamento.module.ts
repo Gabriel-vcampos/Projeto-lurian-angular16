@@ -4,6 +4,7 @@ import { AgendamentoComponent } from './agendamento.component';
 import { SidebarModule } from 'src/app/components/sidebar/sidebar.module';
 import { HeaderConfigModule } from 'src/app/components/header-config/header-config.module';
 import { TabelaPedidosModule } from 'src/app/components/tabela-pedidos/tabela-pedidos.module';
+import { AppRoutingModule } from 'src/app/app-routing.module';
 
 
 
@@ -14,7 +15,8 @@ import { TabelaPedidosModule } from 'src/app/components/tabela-pedidos/tabela-pe
     SidebarModule,
     HeaderConfigModule,
     SidebarModule,
-    TabelaPedidosModule
+    TabelaPedidosModule,
+    AppRoutingModule,
 
     
   ],exports:[]
