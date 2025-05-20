@@ -28,6 +28,9 @@ module.exports = {
     boxShadow: {
       'custom': '0px 2px 8px rgba(0, 0, 0, 0.6)',
         },
+        screens: {
+        'lg2': '930px', // Breakpoint específico para 930px
+      },
 },
   plugins: [],
 }
