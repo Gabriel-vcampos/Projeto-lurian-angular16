@@ -1,42 +1,83 @@
-<!-- Botão para abrir menu lateral (visível apenas no mobile) -->
+<!-- Botão -->
 <button
-  class="md:hidden  top-4 left-4 z-50 bg-slate-950 text-white p-2 rounded"
-  onclick="document.getElementById('sidebar').classList.toggle('-translate-x-full')"
+  (click)="toggleSidebar()"
+  class="fixed md:hidden top-4 left-4 z-[100]  shadow-lg transition-colors"
 >
-  ☰
+<img src="assets/Group 33078.svg" alt="">
 </button>
 
+<!-- Overlay -->
+<div
+  #overlay
+  (click)="toggleSidebar()"
+  class="fixed inset-0 bg-black/50 z-[97] hidden transition-opacity duration-300"
+></div>
+
+<!-- Sidebar -->
 <aside
-  id="sidebar"
-  class="w-56 h-screen bg-slate-950  left-0 top-0 transform transition-transform duration-300 ease-in-out -translate-x-full md:translate-x-0 z-40"
+  #sidebar
+  class="fixed w-44 h-screen bg-slate-950 left-0 top-0 transform transition-all duration-300 ease-in-out -translate-x-full md:translate-x-0 z-[98]"
 >
   <div class="flex flex-col h-full">
-
     <a
-        routerLink="/"
-        routerLinkActive="active-link"
-        class="hover:font-semibold text-sm md:text-base hover:scale-110 transition-transform duration-200"
-      >
-      <img class="mx-auto mt-6 mb-8" src="assets/logo 2.png" alt="Logo da Loja" />
-      </a>
+      routerLink="/"
+      routerLinkActive="active-link"
+      class="hover:font-semibold text-sm md:text-base hover:scale-110 transition-transform duration-200"
+    >
+      <img class="mx-auto mt-20 mb-8" src="assets/logo 2.png" alt="Logo" />
+    </a>
 
     <div class="flex flex-col gap-1 px-2">
       <a
-      routerLinkActive="active"
+        routerLinkActive="active"
         class="text-white py-2 px-3 rounded hover:text-black hover:bg-slate-50 focus:bg-slate-50 focus:text-black transition-colors"
         routerLink="/adm/new-schedule"
-        >Novo Agendamento</a
       >
-      <a       routerLinkActive="active"
+        Agendar
+      </a>
+      <a
+        routerLinkActive="active"
         class="text-white py-2 px-3 rounded hover:text-black hover:bg-slate-50 focus:bg-slate-50 focus:text-black transition-colors"
         routerLink="/adm/pedidos"
-        >Agendamentos</a
       >
-      <!-- <a
-        class="text-white py-2 px-3 rounded hover:text-black hover:bg-slate-50 focus:bg-slate-50 focus:text-black transition-colors"
-        routerLink="/"
-        >Configurações</a
-      > -->
+        Pedidos
+      </a>
     </div>
   </div>
 </aside>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+    const menuButton = document.getElementById('menuButton');
+    const body = document.body;
+
+    const toggleSidebar = () => {
+      const isOpen = !sidebar.classList.contains('-translate-x-full');
+      sidebar.classList.toggle('-translate-x-full');
+      overlay.classList.toggle('hidden');
+      body.classList.toggle('overflow-hidden', !isOpen); // Evita scroll no fundo
+    };
+
+    menuButton.addEventListener('click', toggleSidebar);
+    overlay.addEventListener('click', toggleSidebar);
+
+    // Ajuste quando a tela for redimensionada
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768) {
+        sidebar.classList.remove('-translate-x-full');
+        overlay.classList.add('hidden');
+        body.classList.remove('overflow-hidden');
+      } else {
+        sidebar.classList.add('-translate-x-full');
+      }
+    });
+
+    // Estado inicial para telas pequenas
+    if (window.innerWidth < 768) {
+      sidebar.classList.add('-translate-x-full');
+      overlay.classList.add('hidden');
+    }
+  });
+</script>

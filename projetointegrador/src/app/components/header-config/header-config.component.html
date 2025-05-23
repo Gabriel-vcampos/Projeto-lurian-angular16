@@ -1,35 +1,25 @@
-<header class="flex flex-col sm:flex-row w-full justify-between items-center gap-4 mt-8 px-4">
-    <!-- Campo de busca -->
-    <div class="flex flex-col sm:flex-row items-center w-full sm:w-auto">
+<header class="flex flex-col sm:flex-row w-full justify-between items-stretch sm:items-center gap-3 sm:gap-4 mt-4 sm:mt-8 px-4">
+  <!-- Campo de busca -->
+  <div class="flex flex-col sm:flex-row items-stretch w-full sm:w-auto gap-2 sm:gap-0">
+    <div class="relative flex-1">
       <input
-        class="border-2 rounded-md shadow-md py-1 px-3 w-full sm:w-auto"
-        placeholder="Pesquisar"
-        type="search"
+        class="w-full border-2 rounded-sm shadow-md py-1 px-3 pl-10 sm:pl-10 pr-4"
+        style="background-image: url('assets/search.svg'); background-repeat: no-repeat; background-position: 10px center;"
+        placeholder="Procurar"
         name="buscaLocal"
         id="buscaLocal"
       />
-      <button class="mt-2 sm:mt-0 sm:ml-2 rounded-lg bg-black text-white px-4 py-1 shadow-md w-full sm:w-auto">
-        Buscar
-      </button>
     </div>
-  
-    <!-- Perfil -->
-    <div class="w-full sm:w-auto flex justify-center sm:justify-end">
-      <a class="flex items-center gap-2 text-sm sm:text-base" routerLink="/">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          class="w-5 h-5"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-5.5-2.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0ZM10 12a5.99 5.99 0 0 0-4.793 2.39A6.483 6.483 0 0 0 10 16.5a6.483 6.483 0 0 0 4.793-2.11A5.99 5.99 0 0 0 10 12Z"
-            clip-rule="evenodd"
-          />
-        </svg>
-        <span>Olá, Arthur</span>
-      </a>
-    </div>
-  </header>
-  
+    <button class="rounded-sm  bg-gray-100 text-black px-4 py-2 shadow-md hover:bg-gray-200 sm:ml-2">
+      Procurar
+    </button>
+  </div>
+
+  <!-- Perfil -->
+  <div class="w-full sm:w-auto flex justify-center sm:justify-end">
+    <a class="flex items-center gap-2 text-sm sm:text-base hover:opacity-80 transition-opacity" routerLink="/">
+      <img src="assets/user-circle.svg" alt="Perfil" class="w-6 h-6">
+      <span class="titulo-usuario">Olá, Henrique</span>
+    </a>
+  </div>
+</header>

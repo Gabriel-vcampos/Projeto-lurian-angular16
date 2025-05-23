@@ -3,3 +3,9 @@
     background-color: rgb(248 250 252 / var(--tw-bg-opacity, 1));
     color: black;
 }
+/* Garante que o conteúdo principal não seja sobreposto em desktop */
+@media (min-width: 768px) {
+    main {
+      margin-left: 11rem; /* Ajuste conforme largura da sidebar */
+    }
+  }
