@@ -18,10 +18,10 @@
   <!-- Nome Completo -->
   <div class="flex flex-1 gap-2">
     <button type="button" disabled 
-            class="flex items-center gap-2 border border-black px-3 py-2 rounded text-sm shrink-0 min-w-[120px]">
-      <i class="fas fa-user text-sm"></i>
-      <span class="hidden md:inline">Nome</span>
-    </button>
+        class="flex items-center gap-2 border border-black px-3 py-2 rounded text-sm shrink-0 min-w-[120px]">
+  <img src="assets/Icon.svg" alt="Ícone usuário" class="w-4 h-4">
+  <span class="hidden md:inline">Nome</span>
+</button>
     <input type="text" [(ngModel)]="agendamento.nomeCompleto" name="nomeCompleto"
            class="w-full border border-black rounded px-3 py-2 placeholder:text-sm"/>
   </div>
@@ -29,10 +29,10 @@
   <!-- E-mail -->
   <div class="flex flex-1 gap-2">
     <button type="button" disabled 
-            class="flex items-center gap-2 border border-black px-3 py-2 rounded text-sm shrink-0 min-w-[95px]">
-      <i class="fas fa-envelope text-sm"></i>
-      <span class="hidden md:inline">E-mail</span>
-    </button>
+        class="flex items-center gap-2 border border-black px-3 py-2 rounded text-sm shrink-0 min-w-[95px]">
+  <img src="assets/mail-open.svg" alt="Ícone e-mail" class="w-4 h-4">
+  <span class="hidden md:inline">E-mail</span>
+</button>
     <input type="email" [(ngModel)]="agendamento.email" name="email"
            class="w-full border border-black rounded px-3 py-2 placeholder:text-sm"/>
   </div>
@@ -43,10 +43,10 @@
     <!-- Endereço -->
     <div class="flex flex-1 gap-2">
       <button type="button" disabled 
-              class="flex items-center gap-2 border border-black px-3 py-2 rounded text-sm shrink-0 min-w-[90px]">
-        <i class="fas fa-map-marker-alt text-sm"></i>
-        <span class="hidden md:inline">Endereço</span>
-      </button>
+        class="flex items-center gap-2 border border-black px-3 py-2 rounded text-sm shrink-0 min-w-[90px]">
+  <img src="assets/location-marker.svg" alt="Ícone mapa" class="w-4 h-4">
+  <span class="hidden md:inline">Endereço</span>
+</button>
       <input type="text" [(ngModel)]="agendamento.endereco" name="endereco"
              class="w-full border border-black rounded px-3 py-2 placeholder:text-sm"/>
     </div>
@@ -78,14 +78,14 @@
   </div>
 </div>
 
-        <!-- Contato (Ajustado) -->
+        <!-- Contato -->
         <div class="flex flex-col w-full mb-3 gap-2">
           <div class="flex gap-2">
             <button type="button" disabled 
-                    class="flex items-center gap-2 border border-black px-3 py-2 rounded text-sm shrink-0 min-w-[95px]">
-              <i class="fas fa-phone text-sm"></i>
-              <span class="hidden md:inline">Contato</span>
-            </button>
+        class="flex items-center gap-2 border border-black px-3 py-2 rounded text-sm shrink-0 min-w-[95px]">
+  <img src="assets/Icontel.svg" alt="Ícone telefone" class="w-4 h-4">
+  <span class="hidden md:inline">Contato</span>
+</button>
             <input type="text" [(ngModel)]="agendamento.contato" name="contato"
                    class="w-full border border-black rounded px-3 py-2 text-sm"/>
           </div>
@@ -93,37 +93,37 @@
 
         <!-- Número do Pedido -->
         <div class="flex flex-col md:flex-row items-start md:items-center mb-3 gap-2">
-          <button type="button" 
-                  class="flex items-center gap-2 border border-black px-3 py-2 rounded text-sm shrink-0 min-w-[115px]">
-            <i class="fas fa-plus text-sm"></i>
-            <span class="hidden md:inline">Nº Pedido</span>
-          </button>
+          <button type="button"  disabled
+        class="flex items-center gap-2 border border-black px-3 py-2 rounded text-sm shrink-0 min-w-[115px]">
+  <img src="assets/Iconpedido.svg" alt="Ícone código" class="w-3 h-3">
+  <span class="hidden md:inline">Nº Pedido</span>
+</button>
           <span class="text-xs font-semibold px-3 py-2 border border-gray-400 rounded bg-gray-100">
             {{ agendamento.numeroPedido }}
           </span>
         </div>
 
-        <!-- Descrição do Pedido (Ajustado) -->
+        <!-- Descrição do Pedido -->
         <div class="flex flex-col w-full mb-3 gap-2">
           <div class="flex gap-2">
             <button type="button" disabled 
-                    class="flex items-center gap-2 border border-black px-3 py-2 rounded text-sm shrink-0 min-w-[130px]">
-              <i class="fas fa-align-left text-sm"></i>
-              <span class="hidden md:inline">Descrição</span>
-            </button>
+            class="flex items-center gap-2 border border-black px-3 py-2 rounded text-sm shrink-0 min-w-[130px]">
+      <img src="assets/view-list.svg" alt="Ícone descrição" class="w-4 h-4">
+      <span class="hidden md:inline">Descrição</span>
+    </button>
             <input type="text" [(ngModel)]="agendamento.descricaoPedido" name="descricaoPedido"
                    class="w-full border border-black rounded px-3 py-2 text-sm"/>
           </div>
         </div>
 
-        <!-- Profissional (Ajustado) -->
+        <!-- Profissional  -->
         <div class="flex flex-col w-full mb-3 gap-2">
           <div class="flex gap-2">
             <button type="button" disabled 
-                    class="flex items-center gap-2 border border-black px-3 py-2 rounded text-sm shrink-0 min-w-[120px]">
-              <i class="fas fa-user text-sm"></i>
-              <span class="hidden md:inline">Profissional</span>
-            </button>
+            class="flex items-center gap-2 border border-black px-3 py-2 rounded text-sm shrink-0 min-w-[120px]">
+      <img src="assets/user-group.svg" alt="Ícone profissional" class="w-4 h-4">
+      <span class="hidden md:inline">Profissional</span>
+    </button>
             <select [(ngModel)]="agendamento.profissional" name="profissional"
                     class="w-full border border-black rounded px-3 py-2 text-sm">
               <option value="">Selecione</option>
@@ -137,20 +137,20 @@
         <div class="flex flex-col sm:flex-row w-full gap-2 mb-3">
           <div class="flex gap-2 flex-1">
             <button type="button" disabled 
-                    class="flex items-center gap-2 border border-black px-3 py-2 rounded text-sm shrink-0 min-w-[85px]">
-              <i class="fas fa-calendar-alt text-sm"></i>
-              <span class="hidden md:inline">Data</span>
-            </button>
+        class="flex items-center gap-2 border border-black px-3 py-2 rounded text-sm shrink-0 min-w-[85px]">
+  <img src="assets/calendar.svg" alt="Ícone calendário" class="w-4 h-4">
+  <span class="hidden md:inline">Data</span>
+</button>
             <input type="date" [(ngModel)]="agendamento.data" name="data"
                    class="w-full border border-black rounded px-3 py-2 text-sm"/>
           </div>
 
           <div class="flex gap-2 flex-1">
             <button type="button" disabled 
-                    class="flex items-center gap-2 border border-black px-3 py-2 rounded text-sm shrink-0 min-w-[95px]">
-              <i class="fas fa-clock text-sm"></i>
-              <span class="hidden md:inline">Horário</span>
-            </button>
+        class="flex items-center gap-2 border border-black px-3 py-2 rounded text-sm shrink-0 min-w-[95px]">
+  <img src="assets/clock.svg" alt="Ícone relógio" class="w-4 h-4">
+  <span class="hidden md:inline">Horário</span>
+</button>
             <input type="time" [(ngModel)]="agendamento.horario" name="horario"
                    class="w-full border border-black rounded px-3 py-2 text-sm"/>
           </div>

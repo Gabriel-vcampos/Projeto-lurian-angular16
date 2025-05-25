@@ -20,10 +20,10 @@ module.exports = {
             'bottom-4': 'right 10rem'
         },
         fontFamily: {
-            'teste': ['Open Sans', 'sans-serif'],
-            'form': ['DM Serif Display'],
-            'manequim': ['Alegreya Sans SC'],
-            'einstein': ['Albert Sans'],
+            teste: ['Open Sans', 'sans-serif'],
+            form: ['DM Serif Display'],
+            manequim: ['Alegreya Sans SC'],
+            einstein: ['Albert Sans'],
             sans : ['Inter', 'ui-sans-serif', 'system-ui'],
         },
     boxShadow: {
