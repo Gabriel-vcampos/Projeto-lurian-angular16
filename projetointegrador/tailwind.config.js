@@ -24,6 +24,7 @@ module.exports = {
             'form': ['DM Serif Display'],
             'manequim': ['Alegreya Sans SC'],
             'einstein': ['Albert Sans'],
+            sans : ['Inter', 'ui-sans-serif', 'system-ui'],
         },
     boxShadow: {
       'custom': '0px 2px 8px rgba(0, 0, 0, 0.6)',

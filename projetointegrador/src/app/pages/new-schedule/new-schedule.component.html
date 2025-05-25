@@ -7,45 +7,76 @@
 
 
     <!-- Conteúdo rolável -->
-    <div class="flex-1 overflow-y-auto">
+    <div class="flex-1 overflow-hidden">
       <hr class="my-4 mx-4 md:mx-6 shadow" />
+
+      <app-novo-agendamento></app-novo-agendamento>
     
       <form class="flex flex-col px-4 pb-10 text-sm font-medium">
+
+       <div class="flex flex-col md:flex-row w-full gap-2 mb-3">
+  <!-- Nome Completo -->
+  <div class="flex flex-1 gap-2">
+    <button type="button" disabled 
+            class="flex items-center gap-2 border border-black px-3 py-2 rounded text-sm shrink-0 min-w-[120px]">
+      <i class="fas fa-user text-sm"></i>
+      <span class="hidden md:inline">Nome</span>
+    </button>
+    <input type="text" [(ngModel)]="agendamento.nomeCompleto" name="nomeCompleto"
+           class="w-full border border-black rounded px-3 py-2 placeholder:text-sm"/>
+  </div>
+
+  <!-- E-mail -->
+  <div class="flex flex-1 gap-2">
+    <button type="button" disabled 
+            class="flex items-center gap-2 border border-black px-3 py-2 rounded text-sm shrink-0 min-w-[95px]">
+      <i class="fas fa-envelope text-sm"></i>
+      <span class="hidden md:inline">E-mail</span>
+    </button>
+    <input type="email" [(ngModel)]="agendamento.email" name="email"
+           class="w-full border border-black rounded px-3 py-2 placeholder:text-sm"/>
+  </div>
+</div>
         <!-- Grupo Endereço -->
         <div class="flex flex-col w-full mb-3 gap-2">
-          <div class="flex gap-2">
-            <button type="button" disabled 
-                    class="flex items-center gap-2 border border-black px-3 py-2 rounded text-sm shrink-0 min-w-[90px]">
-              <i class="fas fa-map-marker-alt text-sm"></i>
-              <span class="hidden md:inline">Endereço</span>
-            </button>
-            <input type="text" [(ngModel)]="agendamento.endereco" name="endereco"
-                   class="w-full border border-black rounded px-3 py-2 placeholder:text-sm"/>
-          </div>
-          
-          <!-- Número e CEP -->
-          <div class="flex flex-col md:flex-row gap-2">
-            <div class="flex gap-2">
-              <button type="button" disabled 
-                      class="flex items-center gap-2 border border-black px-3 py-2 rounded text-sm shrink-0 min-w-[85px]">
-                <i class="fas fa-hashtag text-sm"></i>
-                <span class="hidden md:inline">Número</span>
-              </button>
-              <input type="text" [(ngModel)]="agendamento.numero" name="numero" placeholder="Número"
-                     class="w-full md:w-[120px] border border-black rounded px-3 py-2 text-sm"/>
-            </div>
+  <div class="flex flex-col md:flex-row gap-2">
+    <!-- Endereço -->
+    <div class="flex flex-1 gap-2">
+      <button type="button" disabled 
+              class="flex items-center gap-2 border border-black px-3 py-2 rounded text-sm shrink-0 min-w-[90px]">
+        <i class="fas fa-map-marker-alt text-sm"></i>
+        <span class="hidden md:inline">Endereço</span>
+      </button>
+      <input type="text" [(ngModel)]="agendamento.endereco" name="endereco"
+             class="w-full border border-black rounded px-3 py-2 placeholder:text-sm"/>
+    </div>
 
-            <div class="flex gap-2">
-              <button type="button" disabled 
-                      class="flex items-center gap-2 border border-black px-3 py-2 rounded text-sm shrink-0 min-w-[75px]">
-                <i class="fas fa-barcode text-sm"></i>
-                <span class="hidden md:inline">CEP</span>
-              </button>
-              <input type="text" [(ngModel)]="agendamento.cep" name="cep" placeholder="CEP"
-                     class="w-full md:w-[140px] border border-black rounded px-3 py-2 text-sm"/>
-            </div>
-          </div>
-        </div>
+    <!-- Grupo Número + CEP -->
+    <div class="flex flex-1 gap-2">
+      <!-- Número -->
+      <div class="flex gap-2 flex-1 md:flex-none md:w-[140px]">
+        <button type="button" disabled 
+                class="flex items-center gap-2 border border-black px-3 py-2 rounded text-sm shrink-0 min-w-[85px]">
+          <i class="fas fa-hashtag text-sm"></i>
+          <span class="hidden md:inline">Número</span>
+        </button>
+        <input type="text" [(ngModel)]="agendamento.numero" name="numero" placeholder=""
+               class="w-full border border-black rounded px-3 py-2 text-sm"/>
+      </div>
+
+      <!-- CEP -->
+      <div class="flex gap-2 flex-1 md:flex-none md:w-[160px]">
+        <button type="button" disabled 
+                class="flex items-center gap-2 border border-black px-3 py-2 rounded text-sm shrink-0 min-w-[75px]">
+          <i class="fas fa-barcode text-sm"></i>
+          <span class="hidden md:inline">CEP</span>
+        </button>
+        <input type="text" [(ngModel)]="agendamento.cep" name="cep" placeholder=""
+               class="w-full border border-black rounded px-3 py-2 text-sm"/>
+      </div>
+    </div>
+  </div>
+</div>
 
         <!-- Contato (Ajustado) -->
         <div class="flex flex-col w-full mb-3 gap-2">
@@ -126,16 +157,15 @@
         </div>
 
         <!-- Botões de Ação -->
-        <div class="flex flex-col-reverse sm:flex-row mt-8 justify-center sm:justify-end gap-3 px-0">
+        <div class="flex flex-col-reverse sm:flex-row mt-3 justify-center gap-3 px-0">
           <button type="button" (click)="cancelar()"
-                  class="border border-black px-6 py-2 rounded flex items-center gap-2 justify-center text-sm sm:text-base">
+                  class="border w-28 border-black px-6 py-2 rounded flex items-center gap-2 justify-center text-sm sm:text-base">
             <i class="fas fa-times-circle"></i>
             <span>Cancelar</span>
           </button>
           <button type="button" (click)="salvar()"
-                  class="bg-black text-white px-6 py-2 rounded flex items-center gap-2 justify-center text-sm sm:text-base">
+                  class="bg-black w-28 text-white px-6 py-2 rounded flex items-center gap-2 justify-center text-sm sm:text-base">
             <i class="fas fa-save"></i>
-            <img src="assets/Icon-cancelar" alt="">
             <span>Salvar</span>
           </button>
         </div>

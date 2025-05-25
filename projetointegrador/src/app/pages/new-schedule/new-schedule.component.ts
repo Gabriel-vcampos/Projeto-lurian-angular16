@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
 export class NewScheduleComponent {
 
   agendamento = {
+    nomeCompleto: '',
+    email: '',
     endereco: '',
     numero: '',
     cep: '',

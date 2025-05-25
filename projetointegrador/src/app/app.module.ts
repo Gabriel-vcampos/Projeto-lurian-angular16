@@ -30,6 +30,7 @@ import { NewScheduleComponent } from './pages/new-schedule/new-schedule.componen
 import { OrdersModule } from './pages/orders/orders.module';
 import { ResetPasswordModule } from './pages/reset-password/reset-password.module';
 import { NewScheduleModule } from './pages/new-schedule/new-schedule.module';
+import { NovoAgendamentoModule } from './components/novo-agendamento/novo-agendamento.module';
 
 
 @NgModule({
@@ -68,8 +69,9 @@ import { NewScheduleModule } from './pages/new-schedule/new-schedule.module';
     FormLoginModule,
     TecidosModule,
     OrdersModule,
+    ResetPasswordModule,
+    NovoAgendamentoModule,
     NewScheduleModule,
-    ResetPasswordModule
   ],
   providers: [],
   bootstrap: [AppComponent]

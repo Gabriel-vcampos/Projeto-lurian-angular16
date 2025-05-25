@@ -4,6 +4,7 @@ import { NewScheduleComponent } from './new-schedule.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderConfigModule } from 'src/app/components/header-config/header-config.module';
 import { SidebarModule } from 'src/app/components/sidebar/sidebar.module';
+import { NovoAgendamentoModule } from 'src/app/components/novo-agendamento/novo-agendamento.module';
 
 
 
@@ -14,7 +15,8 @@ import { SidebarModule } from 'src/app/components/sidebar/sidebar.module';
     FormsModule,
     HeaderConfigModule,
     SidebarModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NovoAgendamentoModule
   ],
   exports:[NewScheduleComponent]
 })
