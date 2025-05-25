@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -6,4 +6,6 @@ import { RouterLink } from '@angular/router';
   templateUrl: './header-config.component.html',
   styleUrls: ['./header-config.component.scss'],
 })
-export class HeaderConfigComponent {}
+export class HeaderConfigComponent {
+  @Input() hideSearchInput: boolean = false;
+}

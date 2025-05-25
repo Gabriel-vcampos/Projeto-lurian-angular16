@@ -3,14 +3,14 @@
   <div class="flex flex-col ml-10 sm:flex-row items-center sm:items-stretch w-full sm:w-auto gap-3 sm:gap-3">
     <div class="relative w-40 sm:flex-1">
       <input
-        class="w-full border-2 rounded-sm shadow-md py-1 px-3 pl-10 pr-4"
+        class="input-pesquisar  w-full border-2 rounded-sm shadow-md py-1 px-3 pl-10 pr-4" [class.hidden]="hideSearchInput"
         style="background-image: url('assets/search.svg'); background-repeat: no-repeat; background-position: 10px center;"
         placeholder="Procurar"
         name="buscaLocal"
         id="buscaLocal"
       />
     </div>
-    <button class="w-40 sm:w-auto rounded-sm bg-gray-100 text-black px-4 py-2 shadow-md hover:bg-gray-200 sm:ml-2">
+    <button class="w-40 sm:w-auto rounded-sm bg-gray-100 text-black px-4 py-2 shadow-md hover:bg-gray-200 sm:ml-2" [class.hidden]="hideSearchInput">
       Procurar
     </button>
   </div>

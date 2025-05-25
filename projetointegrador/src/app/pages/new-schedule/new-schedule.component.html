@@ -2,7 +2,9 @@
   <app-sidebar></app-sidebar>
 
   <div class="w-full flex flex-col md:ml-44">
-    <app-header-config></app-header-config>
+<app-header-config [hideSearchInput]="true"></app-header-config>
+
+
 
     <!-- Conteúdo rolável -->
     <div class="flex-1 overflow-y-auto">
@@ -45,15 +47,17 @@
           </div>
         </div>
 
-        <!-- Contato -->
+        <!-- Contato (Ajustado) -->
         <div class="flex flex-col w-full mb-3 gap-2">
-          <button type="button" disabled 
-                  class="flex items-center gap-2 border border-black px-3 py-2 rounded text-sm shrink-0 min-w-[95px]">
-            <i class="fas fa-phone text-sm"></i>
-            <span class="hidden md:inline">Contato</span>
-          </button>
-          <input type="text" [(ngModel)]="agendamento.contato" name="contato"
-                 class="w-full border border-black rounded px-3 py-2 text-sm"/>
+          <div class="flex gap-2">
+            <button type="button" disabled 
+                    class="flex items-center gap-2 border border-black px-3 py-2 rounded text-sm shrink-0 min-w-[95px]">
+              <i class="fas fa-phone text-sm"></i>
+              <span class="hidden md:inline">Contato</span>
+            </button>
+            <input type="text" [(ngModel)]="agendamento.contato" name="contato"
+                   class="w-full border border-black rounded px-3 py-2 text-sm"/>
+          </div>
         </div>
 
         <!-- Número do Pedido -->
@@ -131,6 +135,7 @@
           <button type="button" (click)="salvar()"
                   class="bg-black text-white px-6 py-2 rounded flex items-center gap-2 justify-center text-sm sm:text-base">
             <i class="fas fa-save"></i>
+            <img src="assets/Icon-cancelar" alt="">
             <span>Salvar</span>
           </button>
         </div>
