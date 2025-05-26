@@ -1,0 +1,13 @@
+:host {
+  .sidebar {
+    box-shadow: 4px 0 6px -1px rgba(0, 0, 0, 0.1);
+    border-radius: 0 1rem 1rem 0;
+  }
+
+  .menu-button {
+    transition: transform 0.2s;
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+}

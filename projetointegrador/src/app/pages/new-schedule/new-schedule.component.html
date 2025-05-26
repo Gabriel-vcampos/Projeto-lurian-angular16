@@ -159,13 +159,15 @@
         <!-- Botões de Ação -->
         <div class="flex flex-col-reverse sm:flex-row mt-3 justify-center gap-3 px-0">
           <button type="button" (click)="cancelar()"
-                  class="border w-28 border-black px-6 py-2 rounded flex items-center gap-2 justify-center text-sm sm:text-base">
+                  class="border w-28 hover:bg-gray-200 hover:transition border-black px-6 py-2 rounded flex items-center gap-2 justify-center pl-3 text-sm sm:text-base">
             <i class="fas fa-times-circle"></i>
-            <span>Cancelar</span>
+            <img src="assets/Icon-cancelar.svg" alt="">
+            <span class="opacity-60">Cancelar</span>
           </button>
           <button type="button" (click)="salvar()"
-                  class="bg-black w-28 text-white px-6 py-2 rounded flex items-center gap-2 justify-center text-sm sm:text-base">
+                  class="bg-black w-28 text-white px-6 py-2 rounded flex items-center gap-2 justify-center pl-3 text-sm sm:text-base">
             <i class="fas fa-save"></i>
+            <img src="assets/check-circle.svg" alt="">
             <span>Salvar</span>
           </button>
         </div>

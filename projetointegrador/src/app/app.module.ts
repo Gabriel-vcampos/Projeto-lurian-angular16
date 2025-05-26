@@ -31,6 +31,8 @@ import { OrdersModule } from './pages/orders/orders.module';
 import { ResetPasswordModule } from './pages/reset-password/reset-password.module';
 import { NewScheduleModule } from './pages/new-schedule/new-schedule.module';
 import { NovoAgendamentoModule } from './components/novo-agendamento/novo-agendamento.module';
+import { SidebarraMobileComponent } from './components/sidebarra-mobile/sidebarra-mobile.component';
+
 
 
 @NgModule({
@@ -41,6 +43,8 @@ import { NovoAgendamentoModule } from './components/novo-agendamento/novo-agenda
     CadastroComponent,
     LoginComponent,
     TestesComponent,
+    SidebarraMobileComponent,
+
  
   ],
   imports: [
