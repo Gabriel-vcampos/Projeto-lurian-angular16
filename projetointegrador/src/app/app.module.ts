@@ -3,12 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AgendamentoComponent } from './pages/agendamento/agendamento.component';
+import { AgendamentoComponent } from './pages/tabela-agendamento/agendamento.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { TestesComponent } from './pages/testes/testes.component';
-import { SidebarModule } from "./components/sidebar/sidebar.module";
+import { SidebarModule } from "./components/sidebar-adm/sidebar.module";
 import { HeaderConfigModule } from "./components/header-config/header-config.module";
 import { TabelaPedidosModule } from "./components/tabela-pedidos/tabela-pedidos.module";
 import { HeaderLogModule } from "./components/header-log/header-log.module";
@@ -22,18 +22,12 @@ import { BgManequimmodule } from "./components/bg-manequim/bg-manequim.module";
 import { FooterModule } from "./components/footer/footer.module";
 import { FormLoginModule } from "./components/form-login/form-login.module";
 import { RouterModule } from '@angular/router';
-import { routes } from './app.routes';
-import { TecidosComponent } from './components/tecidos/tecidos.component';
-import { AgendamentoModule } from './pages/agendamento/agendamento.module';
-import { OrdersComponent } from './pages/orders/orders.component';
-import { NewScheduleComponent } from './pages/new-schedule-adm/new-schedule.component';
-import { OrdersModule } from './pages/orders/orders.module';
-import { ResetPasswordModule } from './pages/reset-password/reset-password.module';
 import { NewScheduleModule } from './pages/new-schedule-adm/new-schedule.module';
 import { NovoAgendamentoModule } from './components/novo-agendamento/novo-agendamento.module';
-import { SidebarraMobileComponent, SidebarraMobileModule } from './components/sidebarra-mobile/sidebarra-mobile.component';
+import { SidebarraMobileModule } from './components/sidebarra-mobile-adm/sidebarra-mobile.module';
+import { FormsModule } from '@angular/forms';
 import { NewScheduleClienteComponent } from './pages/new-schedule-cliente/new-schedule-cliente.component';
-
+import { SidebarraMobileClienteComponent } from './components/sidebarra-mobile-cliente/sidebarra-mobile-cliente.component';
 
 
 @NgModule({
@@ -44,6 +38,10 @@ import { NewScheduleClienteComponent } from './pages/new-schedule-cliente/new-sc
     CadastroComponent,
     LoginComponent,
     TestesComponent,
+    NewScheduleClienteComponent,
+    SidebarraMobileClienteComponent,
+    
+
 
  
   ],
@@ -72,11 +70,13 @@ import { NewScheduleClienteComponent } from './pages/new-schedule-cliente/new-sc
     FooterModule,
     FormLoginModule,
     TecidosModule,
-    OrdersModule,
-    ResetPasswordModule,
     NovoAgendamentoModule,
     NewScheduleModule,
-    SidebarraMobileModule
+    SidebarraMobileModule,
+    RouterModule,
+    AppRoutingModule,
+    BrowserModule,
+    FormsModule,
 ],
   providers: [],
   bootstrap: [AppComponent]

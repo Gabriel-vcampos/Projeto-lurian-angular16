@@ -1,0 +1,70 @@
+<!-- Botão do menu hambúrguer -->
+<button 
+  *ngIf="isMobile"
+  class="menu-button fixed top-4 left-4 z-50 p-2 bg-white rounded-full shadow-lg"
+  (click)="toggleSidebar()"
+>
+  <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+  </svg>
+</button>
+
+<!-- Overlay -->
+<div 
+  class="fixed inset-0 bg-black/50 z-40 transition-opacity"
+  [class.hidden]="!isOpen"
+  [class.opacity-0]="!isOpen"
+  [class.opacity-100]="isOpen"
+  (click)="sidebarClosed.emit()"
+
+
+></div>
+
+<!-- Sidebar -->
+<aside 
+  class="sidebar fixed inset-y-0 left-0 z-50 w-64 bg-white transform transition-transform duration-300"
+  [class.-translate-x-full]="!isOpen"
+>
+  <!-- Perfil do usuário -->
+  <div class="p-6 text-center border-b border-gray-100">
+    <h3 class="text-gray-800 font-semibold mb-1">Henrique</h3>
+    <p class="text-gray-500 text-sm">henriquegmail.com</p>
+  </div>
+
+  <!-- Itens de navegação -->
+  <nav class="p-4">
+    <ul class="space-y-2">
+      <li 
+  *ngFor="let item of navItems" 
+  class="group flex items-center px-4 py-3 rounded-lg cursor-pointer transition-colors hover:bg-gray-100"
+  [class.bg-gray-100]="item.selected"
+  [class.text-gray-800]="item.selected"
+  [class.text-gray-600]="!item.selected"
+  (click)="navigateTo(item.route)"
+>
+        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" [attr.d]="item.icon"/>
+        </svg>
+        <span class="text-sm">{{ item.label }}</span>
+      </li>
+    </ul>
+
+    <!-- Divisória "Other" -->
+    <div class="my-6 px-4">
+      <span class="text-xs text-gray-400 uppercase tracking-wide">Other</span>
+    </div>
+
+    <!-- Outros itens -->
+    <ul class="space-y-2">
+      <li 
+        *ngFor="let item of otherItems" 
+        class="group flex items-center px-4 py-3 rounded-lg cursor-pointer transition-colors text-gray-600 hover:bg-gray-100"
+      >
+        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" [attr.d]="item.icon"/>
+        </svg>
+        <span class="text-sm">{{ item.label }}</span>
+      </li>
+    </ul>
+  </nav>
+</aside>
