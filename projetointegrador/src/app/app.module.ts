@@ -43,7 +43,6 @@ import { SidebarraMobileComponent } from './components/sidebarra-mobile/sidebarr
     CadastroComponent,
     LoginComponent,
     TestesComponent,
-    SidebarraMobileComponent,
 
  
   ],

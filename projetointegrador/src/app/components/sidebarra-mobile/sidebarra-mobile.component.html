@@ -15,7 +15,9 @@
   [class.hidden]="!isOpen"
   [class.opacity-0]="!isOpen"
   [class.opacity-100]="isOpen"
-  (click)="closeSidebar()"
+  (click)="sidebarClosed.emit()"
+
+
 ></div>
 
 <!-- Sidebar -->
@@ -25,23 +27,21 @@
 >
   <!-- Perfil do usuário -->
   <div class="p-6 text-center border-b border-gray-100">
-    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gray-200 overflow-hidden">
-      <img src="assets/avatar.png" alt="Avatar" class="w-full h-full object-cover">
-    </div>
-    <h3 class="text-gray-800 font-semibold mb-1">Sunie Pham</h3>
-    <p class="text-gray-500 text-sm">suniexugmail.com</p>
+    <h3 class="text-gray-800 font-semibold mb-1">Henrique</h3>
+    <p class="text-gray-500 text-sm">henriquegmail.com</p>
   </div>
 
   <!-- Itens de navegação -->
   <nav class="p-4">
     <ul class="space-y-2">
       <li 
-        *ngFor="let item of navItems" 
-        class="group flex items-center px-4 py-3 rounded-lg cursor-pointer transition-colors"
-        [class.bg-gray-100]="item.selected"
-        [class.text-gray-800]="item.selected"
-        [class.text-gray-600]="!item.selected"
-      >
+  *ngFor="let item of navItems" 
+  class="group flex items-center px-4 py-3 rounded-lg cursor-pointer transition-colors hover:bg-gray-100"
+  [class.bg-gray-100]="item.selected"
+  [class.text-gray-800]="item.selected"
+  [class.text-gray-600]="!item.selected"
+  (click)="navigateTo(item.route)"
+>
         <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" [attr.d]="item.icon"/>
         </svg>
@@ -58,7 +58,7 @@
     <ul class="space-y-2">
       <li 
         *ngFor="let item of otherItems" 
-        class="group flex items-center px-4 py-3 rounded-lg cursor-pointer transition-colors text-gray-600"
+        class="group flex items-center px-4 py-3 rounded-lg cursor-pointer transition-colors text-gray-600 hover:bg-gray-100"
       >
         <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" [attr.d]="item.icon"/>
@@ -67,13 +67,4 @@
       </li>
     </ul>
   </nav>
-
-  <!-- Alternância de tema (exemplo fictício) -->
-  <div class="p-4 border-t border-gray-100 flex items-center justify-between">
-    <span class="text-sm text-gray-600">Tema:</span>
-    <div class="flex items-center space-x-2">
-      <button class="text-xs px-2 py-1 rounded bg-gray-200">Light</button>
-      <button class="text-xs px-2 py-1 rounded">Dark</button>
-    </div>
-  </div>
 </aside>
