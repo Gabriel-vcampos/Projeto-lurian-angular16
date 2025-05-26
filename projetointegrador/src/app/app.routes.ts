@@ -8,7 +8,7 @@ import { TabelaPedidosComponent } from './components/tabela-pedidos/tabela-pedid
 import { OrdersComponent } from './pages/orders/orders.component';
 import { OrderDetailsComponent } from './pages/order-details/order-details.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
-import { NewScheduleComponent } from './pages/new-schedule/new-schedule.component';
+import { NewScheduleComponent } from './pages/new-schedule-adm/new-schedule.component';
 
 export const routes: Routes = [
     {

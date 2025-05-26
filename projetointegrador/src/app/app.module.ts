@@ -26,12 +26,13 @@ import { routes } from './app.routes';
 import { TecidosComponent } from './components/tecidos/tecidos.component';
 import { AgendamentoModule } from './pages/agendamento/agendamento.module';
 import { OrdersComponent } from './pages/orders/orders.component';
-import { NewScheduleComponent } from './pages/new-schedule/new-schedule.component';
+import { NewScheduleComponent } from './pages/new-schedule-adm/new-schedule.component';
 import { OrdersModule } from './pages/orders/orders.module';
 import { ResetPasswordModule } from './pages/reset-password/reset-password.module';
-import { NewScheduleModule } from './pages/new-schedule/new-schedule.module';
+import { NewScheduleModule } from './pages/new-schedule-adm/new-schedule.module';
 import { NovoAgendamentoModule } from './components/novo-agendamento/novo-agendamento.module';
-import { SidebarraMobileComponent } from './components/sidebarra-mobile/sidebarra-mobile.component';
+import { SidebarraMobileComponent, SidebarraMobileModule } from './components/sidebarra-mobile/sidebarra-mobile.component';
+import { NewScheduleClienteComponent } from './pages/new-schedule-cliente/new-schedule-cliente.component';
 
 
 
@@ -75,7 +76,8 @@ import { SidebarraMobileComponent } from './components/sidebarra-mobile/sidebarr
     ResetPasswordModule,
     NovoAgendamentoModule,
     NewScheduleModule,
-  ],
+    SidebarraMobileModule
+],
   providers: [],
   bootstrap: [AppComponent]
 })
