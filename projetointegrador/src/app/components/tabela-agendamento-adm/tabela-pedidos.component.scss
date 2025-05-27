@@ -1,0 +1,30 @@
+:host {
+    display: block;
+    height: 100%;
+  }
+  
+  table {
+    border-collapse: separate;
+    border-spacing: 0;
+    
+    th, td {
+      white-space: nowrap;
+    }
+    
+    th {
+      border-bottom: 2px solid #e5e7eb;
+    }
+    
+    td {
+      border-bottom: 1px solid #f3f4f6;
+    }
+    
+    tr:last-child td {
+      border-bottom: none;
+    }
+  }
+  
+  .mobile-sidebar {
+    transition: transform 0.3s ease;
+    z-index: 50;
+  }

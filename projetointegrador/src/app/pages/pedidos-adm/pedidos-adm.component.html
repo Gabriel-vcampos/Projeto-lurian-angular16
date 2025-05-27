@@ -4,10 +4,22 @@
   <div class="w-full flex flex-col md:ml-44">
     <app-header-config [hideSearchInput]="true"></app-header-config>
 
+
+    <app-sidebarra-mobile></app-sidebarra-mobile>
+
+
+
+
     <div class="flex-1 overflow-y-auto">
       <hr class="my-4 mx-4 md:mx-6 shadow" />
 
-      <form class="flex flex-col px-4 pb-10 text-sm font-medium gap-6">
+
+      <div class="container w-full mt-7 mb-10 ml-12">
+        <p class=" ml-6 font-sans font-semibold text-3xl tracking-tight">Pedidos</p>
+      
+        </div>
+
+      <form class="flex flex-col px-4 pb-10 text-sm font-medium gap-6 ml-14">
 
         <div class="flex flex-col md:flex-row items-start md:items-center mb-3 gap-2">
   <!-- Botão com label -->
@@ -72,47 +84,69 @@
 
    
 
-        <!-- Status do Pedido -->
-        <div class="flex flex-col gap-4 p-4 border rounded-lg">
-          <h3 class="font-medium text-gray-800">Status do Pedido</h3>
-          
-          <div class="flex flex-col md:flex-row gap-4">
-            <label class="flex items-center gap-2">
-              <input type="radio" name="status" value="nao_iniciado" [(ngModel)]="agendamento.statusPedido"
-                     class="h-4 w-4 text-blue-600">
-              <span class="text-gray-700">Não Iniciado</span>
-            </label>
+<div class="flex flex-col gap-4  mt-20">
+  <button type="button" disabled 
+          class="flex items-center gap-1 px-2 py-0 pt-2 pb-2 mb-6 border justify-center border-black text-sm w-60 rounded font-sans font-semibold">
+    <span class="whitespace-nowrap">QUAL É O STATUS DO PEDIDO?</span>
+  </button>
+  
+  <div class="flex flex-col md:flex-row gap-4">
+    <!-- Botões de status -->
+    <button type="button" 
+            class="px-6 py-3 rounded border border-black transition-colors"
+            [ngClass]="{
+              'bg-black text-white': agendamento.statusPedido === 'nao_iniciado',
+              'bg-gray-200 hover:bg-gray-300': agendamento.statusPedido !== 'nao_iniciado'
+            }"
+            (click)="agendamento.statusPedido = 'nao_iniciado'">
+      NÃO INICIADO
+    </button>
 
-            <label class="flex items-center gap-2">
-              <input type="radio" name="status" value="em_producao" [(ngModel)]="agendamento.statusPedido"
-                     class="h-4 w-4 text-blue-600">
-              <span class="text-gray-700">Em Produção</span>
-            </label>
+    <button type="button" 
+            class="px-6 py-3 rounded border border-black transition-colors"
+            [ngClass]="{
+              'bg-black text-white': agendamento.statusPedido === 'em_producao',
+              'bg-gray-200 hover:bg-gray-300': agendamento.statusPedido !== 'em_producao'
+            }"
+            (click)="agendamento.statusPedido = 'em_producao'">
+      EM PRODUÇÃO
+    </button>
 
-            <label class="flex items-center gap-2">
-              <input type="radio" name="status" value="pronto_retirada" [(ngModel)]="agendamento.statusPedido"
-                     class="h-4 w-4 text-blue-600">
-              <span class="text-gray-700">Pronto para Retirada</span>
-            </label>
-          </div>
-        </div>
+    <button type="button" 
+            class="px-6 py-3 rounded border border-black transition-colors"
+            [ngClass]="{
+              'bg-black text-white': agendamento.statusPedido === 'pronto_retirada',
+              'bg-gray-200 hover:bg-gray-300': agendamento.statusPedido !== 'pronto_retirada'
+            }"
+            (click)="agendamento.statusPedido = 'pronto_retirada'">
+      PRONTO PARA RETIRADA
+    </button>
+  </div>
+</div>
 
         <!-- Botões de Ação -->
-        <div class="flex flex-col-reverse md:flex-row justify-between gap-4 mt-8">
+        <div class="flex flex-col-reverse md:flex-row justify-between gap-4 mt-8 ml-3">
           <button type="button" (click)="cancelarPedido()"
-                  class="bg-red-500 text-white px-6 py-2 rounded hover:bg-red-600 fixed left-4 bottom-4 md:static">
-            Cancelar Pedido
+                  class= "border hover:bg-red-600 hover:transition w-44 text-white bg-red-500 px-6 py-2 rounded flex items-center gap-2 justify-center pl-3 text-sm sm:text-base">
+                  <i class="fas fa-times-circle"></i>
+                  <img class="ml-2" src="assets/icon-cancelar-branco.svg" alt="">
+                  <span class="whitespace-nowrap">Cancelar pedido</span>
           </button>
           
           <div class="flex gap-4 justify-end">
             <button type="button" (click)="cancelar()"
-                    class="border border-black px-6 py-2 rounded hover:bg-gray-100">
-              Cancelar
-            </button>
-            <button type="button" (click)="salvar()"
-                    class="bg-black text-white px-6 py-2 rounded hover:bg-gray-800">
-              Salvar Alterações
-            </button>
+                  class="border w-28 hover:bg-gray-200 hover:transition border-black px-6 py-2 rounded flex items-center gap-2 justify-center pl-3 text-sm sm:text-base">
+            <i class="fas fa-times-circle"></i>
+            <img src="assets/Icon-cancelar.svg" alt="">
+            <span class="opacity-60">Cancelar</span>
+          </button>
+
+          <button type="button" (click)="salvar()"
+          class="bg-black w-28 text-white px-6 py-2 rounded flex items-center gap-2 justify-center pl-3 text-sm sm:text-base">
+    <i class="fas fa-save"></i>
+    <img src="assets/check-circle.svg" alt="">
+    <span>Salvar</span>
+  </button>
           </div>
         </div>
       </form>

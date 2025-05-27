@@ -6,6 +6,7 @@ input[type="radio"] {
   }
 }
 
+
 /* Ajuste de posicionamento mobile */
 @media (max-width: 767px) {
   .fixed {
@@ -15,4 +16,10 @@ input[type="radio"] {
     right: 1rem;
     width: auto;
   }
+}
+
+@media screen {
+
+  
+  
 }
