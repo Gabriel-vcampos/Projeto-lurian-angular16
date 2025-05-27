@@ -28,6 +28,7 @@ import { SidebarraMobileModule } from './components/sidebarra-mobile-adm/sidebar
 import { FormsModule } from '@angular/forms';
 import { NewScheduleClienteComponent } from './pages/new-schedule-cliente/new-schedule-cliente.component';
 import { SidebarraMobileClienteComponent } from './components/sidebarra-mobile-cliente/sidebarra-mobile-cliente.component';
+import { SidebarClienteComponent } from './components/sidebar-cliente/sidebar-cliente.component';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { SidebarraMobileClienteComponent } from './components/sidebarra-mobile-c
     TestesComponent,
     NewScheduleClienteComponent,
     SidebarraMobileClienteComponent,
+    SidebarClienteComponent
     
 
 
