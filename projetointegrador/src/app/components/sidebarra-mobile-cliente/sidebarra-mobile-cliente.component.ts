@@ -46,9 +46,7 @@ export class SidebarraMobileClienteComponent {
 
   constructor(
     private breakpointObserver: BreakpointObserver,
-    private router: Router,
-    private route: ActivatedRoute
-  ) {
+    private router: Router  ) {
     this.breakpointObserver.observe([
       Breakpoints.Handset,
       Breakpoints.TabletPortrait

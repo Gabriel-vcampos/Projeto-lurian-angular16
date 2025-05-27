@@ -3,23 +3,23 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderConfigModule } from 'src/app/components/header-config/header-config.module';
 import { NovoAgendamentoModule } from 'src/app/components/novo-agendamento/novo-agendamento.module';
-import { AppRoutingModule } from 'src/app/app-routing.module';
-import { RouterModule } from '@angular/router';
-import { NewScheduleClienteComponent } from './new-schedule-cliente.component';
-import { SidebarClienteModule } from '../../components/sidebar-cliente/sidebar-cliente.module';
+import { SidebarModule } from 'src/app/components/sidebar-adm/sidebar.module';
+import { SidebarraMobileModule } from 'src/app/components/sidebarra-mobile-adm/sidebarra-mobile.module';
+import { PedidosAdmComponent } from './pedidos-adm.component';
+
+
 
 @NgModule({
-  declarations: [NewScheduleClienteComponent],
+  declarations: [PedidosAdmComponent],
   imports: [
     CommonModule,
     FormsModule,
     HeaderConfigModule,
+    SidebarModule,
     ReactiveFormsModule,
     NovoAgendamentoModule,
-    AppRoutingModule,
-    RouterModule,
-    SidebarClienteModule,
+    SidebarraMobileModule,
   ],
-  exports:[NewScheduleClienteComponent]
+  exports:[PedidosAdmComponent]
 })
-export class NewScheduleClienteModule { }
+export class PedidosAdmModule { }

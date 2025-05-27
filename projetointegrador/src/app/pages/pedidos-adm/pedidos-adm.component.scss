@@ -1,0 +1,18 @@
+/* Para os radio buttons */
+input[type="radio"] {
+  border: 2px solid #ccc;
+  &:checked {
+    border-color: #2563eb;
+  }
+}
+
+/* Ajuste de posicionamento mobile */
+@media (max-width: 767px) {
+  .fixed {
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    width: auto;
+  }
+}

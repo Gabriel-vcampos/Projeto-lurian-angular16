@@ -10,7 +10,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { TestesComponent } from './pages/testes/testes.component';
 import { SidebarModule } from "./components/sidebar-adm/sidebar.module";
 import { HeaderConfigModule } from "./components/header-config/header-config.module";
-import { TabelaPedidosModule } from "./components/tabela-pedidos/tabela-pedidos.module";
+import { TabelaPedidosModule } from "./components/tabela-agendamento-adm/tabela-pedidos.module";
 import { HeaderLogModule } from "./components/header-log/header-log.module";
 import { FormSignInModule } from "./components/form-sign-in/form-sign-in.module";
 import { HeaderHomeModule } from "./components/header-home/header-home.module";
@@ -29,6 +29,8 @@ import { FormsModule } from '@angular/forms';
 import { NewScheduleClienteComponent } from './pages/new-schedule-cliente/new-schedule-cliente.component';
 import { SidebarraMobileClienteComponent } from './components/sidebarra-mobile-cliente/sidebarra-mobile-cliente.component';
 import { SidebarClienteComponent } from './components/sidebar-cliente/sidebar-cliente.component';
+import { PedidosAdmComponent } from './pages/pedidos-adm/pedidos-adm.component';
+import { PedidosClienteComponent } from './pages/pedidos-cliente/pedidos-cliente.component';
 
 
 @NgModule({
@@ -41,7 +43,9 @@ import { SidebarClienteComponent } from './components/sidebar-cliente/sidebar-cl
     TestesComponent,
     NewScheduleClienteComponent,
     SidebarraMobileClienteComponent,
-    SidebarClienteComponent
+    SidebarClienteComponent,
+    PedidosAdmComponent,
+    PedidosClienteComponent
     
 
 

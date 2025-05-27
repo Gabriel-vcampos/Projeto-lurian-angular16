@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { HeaderConfigComponent } from '../../components/header-config/header-config.component';
 import { SidebarComponent } from '../../components/sidebar-adm/sidebar.component';
-import { TabelaPedidosComponent } from '../../components/tabela-pedidos/tabela-pedidos.component';
+import { TabelaPedidosComponent } from '../../components/tabela-agendamento-adm/tabela-pedidos.component';
 
 @Component({
   selector: 'app-agendamento',

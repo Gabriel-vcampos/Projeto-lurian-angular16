@@ -4,9 +4,10 @@ import { TestesComponent } from './pages/testes/testes.component';
 import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AgendamentoComponent } from './pages/tabela-agendamento/agendamento.component';
-import { TabelaPedidosComponent } from './components/tabela-pedidos/tabela-pedidos.component';
+import { TabelaPedidosComponent } from './components/tabela-agendamento-adm/tabela-pedidos.component';
 import { NewScheduleComponent } from './pages/new-schedule-adm/new-schedule.component';
 import { NewScheduleClienteComponent } from './pages/new-schedule-cliente/new-schedule-cliente.component';
+import { PedidosAdmComponent } from './pages/pedidos-adm/pedidos-adm.component';
 
 export const routes: Routes = [
     {
@@ -31,7 +32,7 @@ export const routes: Routes = [
     {
         path: 'adm/pedidos',
         title: 'Pedidos',
-        component: AgendamentoComponent
+        component: PedidosAdmComponent
     },
     {
         path: 'pedidos',
