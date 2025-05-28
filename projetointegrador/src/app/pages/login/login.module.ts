@@ -8,12 +8,10 @@ import { FormLoginModule } from 'src/app/components/form-login/form-login.module
 
 
 @NgModule({
-  declarations: [LoginComponent],
   imports: [
     CommonModule,
     HeaderLogModule,
     FormLoginModule,
   ],
-  exports: [LoginComponent]
 })
 export class LoginModule { }

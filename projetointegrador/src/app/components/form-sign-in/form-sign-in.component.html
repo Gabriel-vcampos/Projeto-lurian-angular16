@@ -2,43 +2,82 @@
   <h3 class="text-left font-semibold text-3xl md:text-4xl pb-4">Comece Agora</h3>
   <p class="font-normal text-base">Insira suas informações para se cadastrar</p>
 
-  <form action="#" method="post" class="w-full">
+  <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()" class="w-full" novalidate>
+    <!-- Username -->
     <div class="flex flex-col mt-4">
-      <div class="flex flex-col">
-        <label for="name">Nome</label>
-        <input type="text" id="name" name="name" required placeholder="Seu nome.." class="rounded-xl w-full p-2 border-2" />
+      <label for="username">Username</label>
+      <input id="username" type="text" formControlName="username" placeholder="Seu username.." class="rounded-xl w-full p-2 border-2" />
+      <small *ngIf="cadastroForm.get('username')?.invalid && cadastroForm.get('username')?.touched" class="text-red-600">Username é obrigatório</small>
+    </div>
+
+    <!-- Email -->
+    <div class="flex flex-col mt-4">
+      <label for="email">Email</label>
+      <input id="email" type="email" formControlName="email" placeholder="name@example.com" class="rounded-xl w-full p-2 border-2" />
+      <small *ngIf="cadastroForm.get('email')?.invalid && cadastroForm.get('email')?.touched" class="text-red-600">Email inválido</small>
+    </div>
+
+    <!-- Senha -->
+    <div class="flex flex-col mt-4">
+      <label for="senha">Senha</label>
+      <input id="senha" type="password" formControlName="senha" placeholder="Digite sua senha" class="rounded-xl w-full p-2 border-2" />
+      <small *ngIf="cadastroForm.get('senha')?.invalid && cadastroForm.get('senha')?.touched" class="text-red-600">Senha é obrigatória</small>
+    </div>
+
+
+    <!-- Contato -->
+    <div class="flex flex-col mt-4">
+      <label for="contato">Contato</label>
+      <input id="contato" type="text" formControlName="contato" placeholder="Telefone ou contato" class="rounded-xl w-full p-2 border-2" />
+    </div>
+
+    <!-- Cliente -->
+    <h4 class="font-semibold text-lg mt-6">Informações Pessoais</h4>
+
+    <div formGroupName="cliente">
+      <div class="flex flex-col mt-4">
+        <label for="cliente.name">Nome Completo</label>
+        <input id="cliente.name" type="text" formControlName="name" placeholder="Nome completo" class="rounded-xl w-full p-2 border-2" />
+        <small *ngIf="cadastroForm.get('cliente.name')?.invalid && cadastroForm.get('cliente.name')?.touched" class="text-red-600">Nome é obrigatório</small>
       </div>
 
       <div class="flex flex-col mt-4">
-        <div class="flex justify-between items-center"></div>
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required placeholder="name@example.com" class="rounded-xl w-full p-2 border-2" />
-        
+        <label for="cliente.cpf">CPF</label>
+        <input id="cliente.cpf" type="text" formControlName="cpf" placeholder="Apenas números" class="rounded-xl w-full p-2 border-2" />
+        <small *ngIf="cadastroForm.get('cliente.cpf')?.invalid && cadastroForm.get('cliente.cpf')?.touched" class="text-red-600">CPF deve ter 11 dígitos</small>
       </div>
 
       <div class="flex flex-col mt-4">
-        <label for="password">Senha</label>
-        <input type="password" id="password" name="password" required placeholder="Digite sua senha" class="rounded-xl w-full p-2 border-2" />
+        <label for="cliente.dataNascimento">Data de Nascimento</label>
+        <input id="cliente.dataNascimento" type="date" formControlName="dataNascimento" class="rounded-xl w-full p-2 border-2" />
+        <small *ngIf="cadastroForm.get('cliente.dataNascimento')?.invalid && cadastroForm.get('cliente.dataNascimento')?.touched" class="text-red-600">Data de nascimento é obrigatória</small>
       </div>
 
-      <div class="flex items-start gap-2 mt-4 mb-4">
-        <input type="checkbox" required id="agree" />
-        <label for="agree" class="text-sm">
-          Li e eu concordo com os
-          <a class="text-blue-700 hover:underline" href="#">termos e condições</a>
-        </label>
-      </div>
+      <h4 class="font-semibold text-lg mt-6">Endereço</h4>
+      <div formGroupName="endereco">
+        <div class="flex flex-col mt-4">
+          <label for="cliente.endereco.rua">Rua</label>
+          <input id="cliente.endereco.rua" type="text" formControlName="rua" placeholder="Rua" class="rounded-xl w-full p-2 border-2" />
+          <small *ngIf="cadastroForm.get('cliente.endereco.rua')?.invalid && cadastroForm.get('cliente.endereco.rua')?.touched" class="text-red-600">Rua é obrigatória</small>
+        </div>
 
-      <div>
-        <button type="submit" class="bg-btn text-white rounded-xl p-2 w-full mt-4">Registrar</button>
-      </div>
-
-      <div class="text-center mt-6">
-        <p class="text-base">
-          Já possui uma conta?
-          <a routerLink="/login" class="text-blue-700 hover:font-semibold">Faça login</a>
-        </p>
+        <div class="flex flex-col mt-4">
+          <label for="cliente.endereco.numero">Número</label>
+          <input id="cliente.endereco.numero" type="text" formControlName="numero" placeholder="Número" class="rounded-xl w-full p-2 border-2" />
+          <small *ngIf="cadastroForm.get('cliente.endereco.numero')?.invalid && cadastroForm.get('cliente.endereco.numero')?.touched" class="text-red-600">Número é obrigatório</small>
+        </div>
       </div>
     </div>
+
+    <!-- Termos -->
+    <div class="flex items-start gap-2 mt-4 mb-4">
+      <input type="checkbox" required id="agree" />
+      <label for="agree" class="text-sm">
+        Li e eu concordo com os
+        <a class="text-blue-700 hover:underline" href="#">termos e condições</a>
+      </label>
+    </div>
+
+    <button type="submit" class="bg-btn text-white rounded-xl p-2 w-full mt-4">Registrar</button>
   </form>
 </div>

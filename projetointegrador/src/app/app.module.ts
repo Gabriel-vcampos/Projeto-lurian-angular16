@@ -38,18 +38,18 @@ import { PedidosClienteComponent } from './pages/pedidos-cliente/pedidos-cliente
     AppComponent,
     AgendamentoComponent,
     HomeComponent,
-    CadastroComponent,
     LoginComponent,
+    CadastroComponent,
     TestesComponent,
     NewScheduleClienteComponent,
     SidebarraMobileClienteComponent,
     SidebarClienteComponent,
     PedidosAdmComponent,
     PedidosClienteComponent,
-    
 
 
- 
+
+
   ],
   imports: [
     RouterModule,

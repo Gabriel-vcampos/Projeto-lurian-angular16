@@ -8,16 +8,14 @@ import { TabelaAgendamentoClienteModule } from "src/app/components/tabela-agenda
 import { PedidosClienteComponent } from "./pedidos-cliente.component";
 
 @NgModule({
-  declarations: [
-    PedidosClienteComponent
-  ],
+  
   imports: [
     CommonModule,
     SidebarModule,
     HeaderConfigModule,
     TabelaPedidosModule,
     AppRoutingModule,
-    TabelaAgendamentoClienteModule // ← Componente já está disponível aqui
+    TabelaAgendamentoClienteModule
   ]
 })
 export class PedidosClienteModule {}
