@@ -45,7 +45,7 @@ import { PedidosClienteComponent } from './pages/pedidos-cliente/pedidos-cliente
     SidebarraMobileClienteComponent,
     SidebarClienteComponent,
     PedidosAdmComponent,
-    PedidosClienteComponent
+    PedidosClienteComponent,
     
 
 

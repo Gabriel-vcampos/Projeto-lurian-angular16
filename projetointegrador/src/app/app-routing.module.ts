@@ -9,6 +9,7 @@ import { TabelaPedidosComponent } from './components/tabela-agendamento-adm/tabe
 import { NewScheduleComponent } from './pages/new-schedule-adm/new-schedule.component';
 import { NewScheduleClienteComponent } from './pages/new-schedule-cliente/new-schedule-cliente.component';
 import { PedidosAdmComponent } from './pages/pedidos-adm/pedidos-adm.component';
+import { PedidosClienteComponent } from './pages/pedidos-cliente/pedidos-cliente.component';
 
 const routes: Routes = [
     {
@@ -30,18 +31,25 @@ const routes: Routes = [
         title: "Lurian",
         component: HomeComponent
     },
+
+    {
+        path: 'cliente/pedidos',
+        title: 'Pedidos',
+        component: PedidosClienteComponent
+
+    },
+    
     {
         path: 'adm/pedidos',
         title: 'Pedidos',
         component: PedidosAdmComponent
     },
     {
-        path: 'pedidos',
+        path: 'adm/agendamentos',
         title: 'Pedidos',
         component: TabelaPedidosComponent
 
     },
-
 
       {
         path: 'adm/new-schedule',

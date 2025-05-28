@@ -4,7 +4,6 @@ import { TabelaPedidosComponent } from './tabela-pedidos.component';
 import { SidebarraMobileModule } from '../sidebarra-mobile-adm/sidebarra-mobile.module';
 import { SidebarModule } from '../sidebar-adm/sidebar.module';
 import { HeaderConfigModule } from '../header-config/header-config.module';
-import { SidebarraMobileComponent } from '../sidebarra-mobile-adm/sidebarra-mobile.component';
 
 
 

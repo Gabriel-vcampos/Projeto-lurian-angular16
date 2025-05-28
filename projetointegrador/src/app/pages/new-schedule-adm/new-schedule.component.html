@@ -13,7 +13,7 @@
 
       <app-novo-agendamento></app-novo-agendamento>
     
-      <form class="flex flex-col px-4 pb-10 text-sm font-medium">
+      <form class="flex flex-col px-4 pb-10 text-sm font-medium " (ngSubmit)="salvar()">
 
        <div class="flex flex-col md:flex-row w-full gap-2 mb-3">
   <!-- Nome Completo -->
@@ -34,7 +34,7 @@
   <img src="assets/mail-open.svg" alt="Ícone e-mail" class="w-4 h-4">
   <span class="">E-mail</span>
 </button>
-    <input type="email" [(ngModel)]="agendamento.email" name="email"
+    <input type="email" [(ngModel)]="agendamento.email" required name="email"
            class="w-full border border-black rounded px-3 py-2 placeholder:text-sm"/>
   </div>
 </div>
@@ -165,8 +165,7 @@
             <img src="assets/Icon-cancelar.svg" alt="">
             <span class="opacity-60">Cancelar</span>
           </button>
-          <button type="button" (click)="salvar()"
-                  class="bg-black w-28 text-white px-6 py-2 rounded flex items-center gap-2 justify-center pl-3 text-sm sm:text-base">
+          <button type="submit" class="bg-black w-28 text-white px-6 py-2 rounded flex items-center gap-2 justify-center pl-3 text-sm sm:text-base">
             <i class="fas fa-save"></i>
             <img src="assets/check-circle.svg" alt="">
             <span>Salvar</span>
