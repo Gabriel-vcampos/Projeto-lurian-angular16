@@ -19,6 +19,11 @@ export class NewScheduleClienteComponent {
     data: '',
     horario: '',
     numeroPedido: '#12541897',
+    "descricao": "Consulta médica",
+    "horaMinuto": "14:30",
+    "status": "AGENDADO",
+  
+    "clienteId": 123
   };
 
   constructor(private agendamentoService: AgendamentoService) {}
