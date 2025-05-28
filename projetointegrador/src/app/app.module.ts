@@ -31,6 +31,7 @@ import { SidebarraMobileClienteComponent } from './components/sidebarra-mobile-c
 import { SidebarClienteComponent } from './components/sidebar-cliente/sidebar-cliente.component';
 import { PedidosAdmComponent } from './pages/pedidos-adm/pedidos-adm.component';
 import { PedidosClienteComponent } from './pages/pedidos-cliente/pedidos-cliente.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -82,6 +83,7 @@ import { PedidosClienteComponent } from './pages/pedidos-cliente/pedidos-cliente
     RouterModule,
     AppRoutingModule,
     BrowserModule,
+    HttpClientModule,
     FormsModule,
 ],
   providers: [],

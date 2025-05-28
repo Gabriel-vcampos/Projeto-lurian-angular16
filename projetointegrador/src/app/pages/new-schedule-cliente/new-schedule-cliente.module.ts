@@ -9,7 +9,6 @@ import { NewScheduleClienteComponent } from './new-schedule-cliente.component';
 import { SidebarClienteModule } from '../../components/sidebar-cliente/sidebar-cliente.module';
 
 @NgModule({
-  declarations: [NewScheduleClienteComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -20,6 +19,5 @@ import { SidebarClienteModule } from '../../components/sidebar-cliente/sidebar-c
     RouterModule,
     SidebarClienteModule,
   ],
-  exports:[NewScheduleClienteComponent]
 })
 export class NewScheduleClienteModule { }

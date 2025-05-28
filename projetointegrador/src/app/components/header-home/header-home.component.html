@@ -8,11 +8,15 @@
     <nav class="flex flex-col min-[335px]:flex-row items-center justify-center w-full lg:w-1/3 gap-2 sm:gap-3 flex-wrap mt-2 lg:mt-0 lg:justify-end xl:justify-center">
         <!-- Grupo 1 - Timer + Login -->
         <div class="flex items-center gap-2">
-            <img class="w-4 min-[335px]:w-5 h-4 min-[335px]:h-5" src="/assets/timer-check.svg" alt="Timer" />
-            <a routerLink="/login" routerLinkActive="active-link"
+            <img *ngIf="!username" class="w-4 min-[335px]:w-5 h-4 min-[335px]:h-5" src="/assets/timer-check.svg" alt="Timer" />
+            <a *ngIf="!username" routerLink="/login" routerLinkActive="active-link"
                class="hover:font-semibold text-sm xl:text-base">
                 Entrar / Registrar
             </a>
+            <p *ngIf="username"
+               class="hover:font-semibold text-sm xl:text-base">
+                Olá, {{username}}
+            </p>
         </div>
 
         <!-- Grupo 2 - Calendário + Pedido -->

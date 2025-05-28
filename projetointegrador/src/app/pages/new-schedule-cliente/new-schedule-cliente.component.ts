@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AgendamentoService } from 'src/app/services/agendamento.service';
 
 @Component({
   selector: 'app-new-schedule-cliente',
@@ -20,8 +21,13 @@ export class NewScheduleClienteComponent {
     numeroPedido: '#12541897',
   };
 
+  constructor(private agendamentoService: AgendamentoService) {}
+
   salvar() {
-    console.log('Agendamento enviado:', this.agendamento);
+    this.agendamentoService.cadastrarAgendamento(this.agendamento).subscribe({
+      next: (res) => console.log('Agendamento enviado com sucesso:', res),
+      error: (err) => console.error('Erro ao enviar agendamento:', err)
+    });
   }
 
   cancelar() {

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -11,7 +11,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class FormLoginComponent {
   loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private authService: AuthService) {
+  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       senha: ['', Validators.required],
@@ -26,7 +26,8 @@ export class FormLoginComponent {
       this.authService.login(loginData).subscribe({
         next: (res) => {
           console.log(' Login bem-sucedido:', res);
-          
+          sessionStorage.setItem("userData", JSON.stringify(res));
+          this.router.navigate(["/"])
         },
         error: (err) => {
           console.error(' Erro no login:', err);
