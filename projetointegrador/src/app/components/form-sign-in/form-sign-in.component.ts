@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -11,7 +11,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class FormSignInComponent {
   cadastroForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private authService: AuthService) {
+  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
     this.cadastroForm = this.fb.group({
       username: ['', Validators.required],
       senha: ['', Validators.required],
@@ -35,11 +35,13 @@ export class FormSignInComponent {
   onSubmit() {
     if (this.cadastroForm.valid) {
       const dados = this.cadastroForm.value;
-      console.log("Dados para envio:", dados); // esse log já aparece ✅
+      console.log("Dados para envio:", dados);
 
       this.authService.cadastrarUsuario(dados).subscribe({
         next: (res) => {
           console.log(' Cadastro realizado com sucesso:', res);
+          this.router.navigate(['/login']);
+
         },
         error: (err) => {
           console.error(' Erro no cadastro:', err);

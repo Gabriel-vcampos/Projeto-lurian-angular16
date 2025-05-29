@@ -10,12 +10,12 @@ export class HeaderConfigComponent implements OnInit {
  username  = '';
 
 ngOnInit(): void {
-  const userData = localStorage.getItem('userData');
+  const userData = sessionStorage.getItem('userData');
 
   if (userData) {
     try {
       const user = JSON.parse(userData);
-      this.username = user.nome || ''; // ajusta o nome conforme a estrutura salva
+      this.username = user.username || ''; // ajusta o nome conforme a estrutura salva
     } catch (e) {
       console.error('Erro ao analisar userData:', e);
       this.username = '';
