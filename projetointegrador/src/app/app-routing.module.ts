@@ -4,18 +4,22 @@ import { TestesComponent } from './pages/testes/testes.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
-import { AgendamentoComponent } from './pages/tabela-agendamento/agendamento.component';
 import { TabelaPedidosComponent } from './components/tabela-agendamento-adm/tabela-pedidos.component';
 import { NewScheduleComponent } from './pages/new-schedule-adm/new-schedule.component';
-import { NewScheduleClienteComponent } from './pages/new-schedule-cliente/new-schedule-cliente.component';
 import { PedidosAdmComponent } from './pages/pedidos-adm/pedidos-adm.component';
-import { PedidosClienteComponent } from './pages/pedidos-cliente/pedidos-cliente.component';
+import { AuthGuard } from './guards/auth.guard';
+
 
 const routes: Routes = [
     {
         path: 'test',
         component: TestesComponent
     },
+    {
+    path: 'adm/new-schedule',
+    component: NewScheduleComponent,
+    canActivate: [AuthGuard] // <-- aqui está a proteção
+  },
     {
         path: 'cadastro',
         title: "Seja nosso cliente",
@@ -30,13 +34,6 @@ const routes: Routes = [
         path: '',
         title: "Lurian",
         component: HomeComponent
-    },
-
-    {
-        path: 'cliente/pedidos',
-        title: 'Pedidos',
-        component: PedidosClienteComponent
-
     },
     
     {
@@ -59,7 +56,7 @@ const routes: Routes = [
     {
     path: 'cliente/new-schedule',
             title: 'cliente new-schedule',
-            component: NewScheduleClienteComponent
+            component: NewScheduleComponent
         },
 
 ];

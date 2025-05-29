@@ -16,17 +16,17 @@ export class FormSignInComponent {
       username: ['', Validators.required],
       senha: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      role: ['ROLE_USER'],
-      profissional: ['Usuário'],
-      contato: [''],
+      role: ['ROLE_ADMIN'],
+      profissional: ['ADMIN'],
+      contato: ['21982392389'],
 
       cliente: this.fb.group({
-        name: ['', Validators.required],
-        cpf: ['', [Validators.required, Validators.pattern(/^\d{11}$/)]],
-        dataNascimento: ['', Validators.required],
+        name: ['123213', Validators.required],
+        cpf: ['18350649739', [Validators.required, Validators.pattern(/^\d{11}$/)]],
+        dataNascimento: ['1800-06-09', Validators.required],
         endereco: this.fb.group({
-          rua: ['', Validators.required],
-          numero: ['', Validators.required],
+          rua: ['RUA ADMIN', Validators.required],
+          numero: ['123', Validators.required],
         })
       })
     });

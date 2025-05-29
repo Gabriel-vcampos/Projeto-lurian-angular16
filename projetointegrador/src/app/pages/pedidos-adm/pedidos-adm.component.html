@@ -3,150 +3,136 @@
 
   <div class="w-full flex flex-col md:ml-44">
     <app-header-config [hideSearchInput]="true"></app-header-config>
-
-
     <app-sidebarra-mobile></app-sidebarra-mobile>
-
-
-
 
     <div class="flex-1 overflow-y-auto">
       <hr class="my-4 mx-4 md:mx-6 shadow" />
 
-
       <div class="container w-full mt-7 mb-10 ml-12">
-        <p class=" ml-6 font-sans font-semibold text-3xl tracking-tight">Pedidos</p>
-      
+        <p class="ml-6 font-sans font-semibold text-3xl tracking-tight">Pedidos</p>
+
+        <!-- Lista de Pedidos com *ngFor -->
+        <div *ngFor="let pedido of pedidos" class="border p-4 mt-4 rounded shadow w-[90%] ml-6">
+          <p><strong>ID:</strong> {{ pedido.id }}</p>
+          <p><strong>Descrição:</strong> {{ pedido.descricao }}</p>
+          <p><strong>Hora:</strong> {{ pedido.horaminuto }}</p>
+          <p><strong>Status:</strong> {{ pedido.status }}</p>
         </div>
+      </div>
 
       <form class="flex flex-col px-4 pb-10 text-sm font-medium gap-6 ml-14">
-
+        <!-- Campos de busca e detalhes do pedido -->
         <div class="flex flex-col md:flex-row items-start md:items-center mb-3 gap-2">
-  <!-- Botão com label -->
-  <button type="button" disabled
-          class="flex items-center gap-2 border border-black px-3 py-2 rounded text-sm shrink-0 min-w-[115px]">
-    <img src="assets/Iconpedido.svg" alt="Ícone código" class="w-3 h-3">
-    <span>Nº Pedido</span>
-  </button>
+          <button type="button" disabled
+            class="flex items-center gap-2 border border-black px-3 py-2 rounded text-sm shrink-0 min-w-[115px]">
+            <img src="assets/Iconpedido.svg" alt="Ícone código" class="w-3 h-3" />
+            <span>Nº Pedido</span>
+          </button>
 
-  <!-- Container do input + botão -->
-  <div class="relative flex-1 w-48">
-    <!-- Input editável -->
-    <input type="text" 
-           [(ngModel)]="agendamento.numeroPedido" 
-           name="numeroPedido"
-           class="w-52 border border-black rounded px-3 py-2 text-sm pr-8">
-    
-    <!-- Botão de pesquisa integrado -->
-    <button type="button" 
-            class="absolute left-44 top-1/2 -translate-y-1/2 p-1 hover:bg-gray-100 rounded-full"
-            (click)="pesquisarPedido()">
-      <img src="assets/arrow-narrow-right.svg" alt="Pesquisar" class="w-4 h-4">
-    </button>
-  </div>
-</div>
+          <div class="relative flex-1 w-48">
+            <input type="text" [(ngModel)]="agendamento.numeroPedido" name="numeroPedido"
+              class="w-52 border border-black rounded px-3 py-2 text-sm pr-8" />
+            <button type="button"
+              class="absolute left-44 top-1/2 -translate-y-1/2 p-1 hover:bg-gray-100 rounded-full"
+              (click)="pesquisarPedido()">
+              <img src="assets/arrow-narrow-right.svg" alt="Pesquisar" class="w-4 h-4" />
+            </button>
+          </div>
+        </div>
 
-
+        <!-- Informações do pedido -->
         <div class="flex flex-col mt-10 gap-6 w-52">
-  <!-- Nome -->
-  <div class="flex flex-1 gap-2 items-stretch">
-    <button type="button" disabled 
-            class="flex items-center gap-2 border border-black px-3 py-2 rounded text-sm shrink-0 min-w-[120px] basis-[120px]">
-      <img src="assets/Icon.svg" alt="Ícone usuário" class="w-4 h-4">
-      <span>Nome</span>
-    </button>
-    <input disabled type="text" [(ngModel)]="agendamento.nomeCompleto" name="nomeCompleto"
-           class="flex-1 border border-black rounded px-3 py-2 placeholder:text-sm"/>
-  </div>
+          <!-- Nome -->
+          <div class="flex flex-1 gap-2 items-stretch">
+            <button type="button" disabled
+              class="flex items-center gap-2 border border-black px-3 py-2 rounded text-sm shrink-0 min-w-[120px] basis-[120px]">
+              <img src="assets/Icon.svg" alt="Ícone usuário" class="w-4 h-4" />
+              <span>Nome</span>
+            </button>
+            <input disabled type="text" [(ngModel)]="agendamento.nomeCompleto" name="nomeCompleto"
+              class="flex-1 border border-black rounded px-3 py-2 placeholder:text-sm" />
+          </div>
 
-  <!-- Contato -->
-  <div class="flex flex-1 gap-2 items-stretch">
-    <button type="button" disabled 
-            class="flex items-center gap-2 border border-black px-3 py-2 rounded text-sm shrink-0 min-w-[120px] basis-[120px]">
-      <img src="assets/Icontel.svg" alt="Ícone telefone" class="w-4 h-4">
-      <span>Contato</span>
-    </button>
-    <input disabled type="text" [(ngModel)]="agendamento.contato" name="contato"
-           class="flex-1 border border-black rounded px-3 py-2 placeholder:text-sm"/>
-  </div>
+          <!-- Contato -->
+          <div class="flex flex-1 gap-2 items-stretch">
+            <button type="button" disabled
+              class="flex items-center gap-2 border border-black px-3 py-2 rounded text-sm shrink-0 min-w-[120px] basis-[120px]">
+              <img src="assets/Icontel.svg" alt="Ícone telefone" class="w-4 h-4" />
+              <span>Contato</span>
+            </button>
+            <input disabled type="text" [(ngModel)]="agendamento.contato" name="contato"
+              class="flex-1 border border-black rounded px-3 py-2 placeholder:text-sm" />
+          </div>
 
-  <!-- Endereço -->
-  <div class="flex flex-1 gap-2 items-stretch">
-    <button type="button" disabled 
-            class="flex items-center gap-2 border border-black px-3 py-2 rounded text-sm shrink-0 min-w-[120px] basis-[120px]">
-      <img src="assets/location-marker.svg" alt="Ícone mapa" class="w-4 h-4">
-      <span>Endereço</span>
-    </button>
-    <input disabled type="text" [(ngModel)]="agendamento.endereco" name="endereco"
-           class="flex-1 border border-black rounded px-3 py-2 placeholder:text-sm"/>
-  </div>
-</div>
+          <!-- Endereço -->
+          <div class="flex flex-1 gap-2 items-stretch">
+            <button type="button" disabled
+              class="flex items-center gap-2 border border-black px-3 py-2 rounded text-sm shrink-0 min-w-[120px] basis-[120px]">
+              <img src="assets/location-marker.svg" alt="Ícone mapa" class="w-4 h-4" />
+              <span>Endereço</span>
+            </button>
+            <input disabled type="text" [(ngModel)]="agendamento.endereco" name="endereco"
+              class="flex-1 border border-black rounded px-3 py-2 placeholder:text-sm" />
+          </div>
+        </div>
 
-   
+        <!-- Status do Pedido -->
+        <div class="flex flex-col gap-4 mt-20">
+          <button type="button" disabled
+            class="flex items-center gap-1 px-2 py-0 pt-2 pb-2 mb-6 border justify-center border-black text-sm w-60 rounded font-sans font-semibold">
+            <span class="whitespace-nowrap">QUAL É O STATUS DO PEDIDO?</span>
+          </button>
 
-<div class="flex flex-col gap-4  mt-20">
-  <button type="button" disabled 
-          class="flex items-center gap-1 px-2 py-0 pt-2 pb-2 mb-6 border justify-center border-black text-sm w-60 rounded font-sans font-semibold">
-    <span class="whitespace-nowrap">QUAL É O STATUS DO PEDIDO?</span>
-  </button>
-  
-  <div class="flex flex-col md:flex-row gap-4">
-    <!-- Botões de status -->
-    <button type="button" 
-            class="px-6 py-3 rounded border border-black transition-colors"
-            [ngClass]="{
-              'bg-black text-white': agendamento.statusPedido === 'nao_iniciado',
-              'bg-gray-200 hover:bg-gray-300': agendamento.statusPedido !== 'nao_iniciado'
-            }"
-            (click)="agendamento.statusPedido = 'nao_iniciado'">
-      NÃO INICIADO
-    </button>
+          <div class="flex flex-col md:flex-row gap-4">
+            <button type="button" class="px-6 py-3 rounded border border-black transition-colors"
+              [ngClass]="{
+                'bg-black text-white': agendamento.statusPedido === 'nao_iniciado',
+                'bg-gray-200 hover:bg-gray-300': agendamento.statusPedido !== 'nao_iniciado'
+              }" (click)="agendamento.statusPedido = 'nao_iniciado'">
+              NÃO INICIADO
+            </button>
 
-    <button type="button" 
-            class="px-6 py-3 rounded border border-black transition-colors"
-            [ngClass]="{
-              'bg-black text-white': agendamento.statusPedido === 'em_producao',
-              'bg-gray-200 hover:bg-gray-300': agendamento.statusPedido !== 'em_producao'
-            }"
-            (click)="agendamento.statusPedido = 'em_producao'">
-      EM PRODUÇÃO
-    </button>
+            <button type="button" class="px-6 py-3 rounded border border-black transition-colors"
+              [ngClass]="{
+                'bg-black text-white': agendamento.statusPedido === 'em_producao',
+                'bg-gray-200 hover:bg-gray-300': agendamento.statusPedido !== 'em_producao'
+              }" (click)="agendamento.statusPedido = 'em_producao'">
+              EM PRODUÇÃO
+            </button>
 
-    <button type="button" 
-            class="px-6 py-3 rounded border border-black transition-colors"
-            [ngClass]="{
-              'bg-black text-white': agendamento.statusPedido === 'pronto_retirada',
-              'bg-gray-200 hover:bg-gray-300': agendamento.statusPedido !== 'pronto_retirada'
-            }"
-            (click)="agendamento.statusPedido = 'pronto_retirada'">
-      PRONTO PARA RETIRADA
-    </button>
-  </div>
-</div>
+            <button type="button" class="px-6 py-3 rounded border border-black transition-colors"
+              [ngClass]="{
+                'bg-black text-white': agendamento.statusPedido === 'pronto_retirada',
+                'bg-gray-200 hover:bg-gray-300': agendamento.statusPedido !== 'pronto_retirada'
+              }" (click)="agendamento.statusPedido = 'pronto_retirada'">
+              PRONTO PARA RETIRADA
+            </button>
+          </div>
+        </div>
 
         <!-- Botões de Ação -->
         <div class="flex flex-col-reverse md:flex-row justify-between gap-4 mt-8 ml-3">
           <button type="button" (click)="cancelarPedido()"
-                  class= "border hover:bg-red-700 hover:transition w-44 text-white bg-red-600 px-6 py-2 rounded flex items-center gap-2 justify-center pl-3 text-sm sm:text-base">
-                  <i class="fas fa-times-circle"></i>
-                  <img class="ml-2" src="assets/icon-cancelar-branco.svg" alt="">
-                  <span class="whitespace-nowrap">Cancelar pedido</span>
-          </button>
-          
-          <div class="flex gap-4 justify-end">
-            <button type="button" (click)="cancelar()"
-                  class="border w-28 hover:bg-gray-200 hover:transition border-black px-6 py-2 rounded flex items-center gap-2 justify-center pl-3 text-sm sm:text-base">
+            class="border hover:bg-red-700 hover:transition w-44 text-white bg-red-600 px-6 py-2 rounded flex items-center gap-2 justify-center pl-3 text-sm sm:text-base">
             <i class="fas fa-times-circle"></i>
-            <img src="assets/Icon-cancelar.svg" alt="">
-            <span class="opacity-60">Cancelar</span>
+            <img class="ml-2" src="assets/icon-cancelar-branco.svg" alt="" />
+            <span class="whitespace-nowrap">Cancelar pedido</span>
           </button>
 
-          <button type="button" (click)="salvar()"
-          class="bg-black w-28 text-white px-6 py-2 rounded flex items-center gap-2 justify-center pl-3 text-sm sm:text-base">
-    <i class="fas fa-save"></i>
-    <img src="assets/check-circle.svg" alt="">
-    <span>Salvar</span>
-  </button>
+          <div class="flex gap-4 justify-end">
+            <button type="button" (click)="cancelar()"
+              class="border w-28 hover:bg-gray-200 hover:transition border-black px-6 py-2 rounded flex items-center gap-2 justify-center pl-3 text-sm sm:text-base">
+              <i class="fas fa-times-circle"></i>
+              <img src="assets/Icon-cancelar.svg" alt="" />
+              <span class="opacity-60">Cancelar</span>
+            </button>
+
+            <button type="button" (click)="salvar()"
+              class="bg-black w-28 text-white px-6 py-2 rounded flex items-center gap-2 justify-center pl-3 text-sm sm:text-base">
+              <i class="fas fa-save"></i>
+              <img src="assets/check-circle.svg" alt="" />
+              <span>Salvar</span>
+            </button>
           </div>
         </div>
       </form>

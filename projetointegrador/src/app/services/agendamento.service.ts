@@ -13,4 +13,8 @@ export class AgendamentoService {
   cadastrarAgendamento(agendamento: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/cadastro`, agendamento);
   }
+
+  getAllAgendamentos(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/listar`);
+  }
 }

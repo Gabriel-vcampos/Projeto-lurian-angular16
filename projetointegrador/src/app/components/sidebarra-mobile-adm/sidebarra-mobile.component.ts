@@ -43,6 +43,24 @@ export class SidebarraMobileComponent {
       route: '/about'
     }
   ];
+  username: string = '';
+  email: string= '';
+
+  ngOnInit(): void {
+    const userData = sessionStorage.getItem('userData'); // ou localStorage, se preferir
+    
+
+    if (userData) {
+      try {
+        const user = JSON.parse(userData);
+        this.username = user.username || 'Usuário';
+         this.email = user.email || 'E-mail não encontrado';
+      } catch (error) {
+        console.error('Erro ao analisar os dados do usuário:', error);
+      }
+    }
+  }
+
 
   constructor(
     private breakpointObserver: BreakpointObserver,

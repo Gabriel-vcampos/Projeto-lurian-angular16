@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header-config',
@@ -8,6 +9,8 @@ import { Component, Input, OnInit } from '@angular/core';
 export class HeaderConfigComponent implements OnInit {
 
  username  = '';
+
+ constructor(private router: Router) {}
 
 ngOnInit(): void {
   const userData = sessionStorage.getItem('userData');
@@ -22,6 +25,12 @@ ngOnInit(): void {
     }
   }
 }
+
+logout(): void {
+    sessionStorage.clear(); // ou localStorage.clear()
+    this.router.navigate(['/home']);
+    window.location.reload();
+  }
 
   @Input() hideSearchInput: boolean = false;
 }

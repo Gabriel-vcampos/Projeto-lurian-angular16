@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AgendamentoComponent } from './pages/tabela-agendamento/agendamento.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -26,27 +25,19 @@ import { NewScheduleModule } from './pages/new-schedule-adm/new-schedule.module'
 import { NovoAgendamentoModule } from './components/novo-agendamento/novo-agendamento.module';
 import { SidebarraMobileModule } from './components/sidebarra-mobile-adm/sidebarra-mobile.module';
 import { FormsModule } from '@angular/forms';
-import { NewScheduleClienteComponent } from './pages/new-schedule-cliente/new-schedule-cliente.component';
-import { SidebarraMobileClienteComponent } from './components/sidebarra-mobile-cliente/sidebarra-mobile-cliente.component';
-import { SidebarClienteComponent } from './components/sidebar-cliente/sidebar-cliente.component';
 import { PedidosAdmComponent } from './pages/pedidos-adm/pedidos-adm.component';
-import { PedidosClienteComponent } from './pages/pedidos-cliente/pedidos-cliente.component';
 import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AgendamentoComponent,
     HomeComponent,
     LoginComponent,
     CadastroComponent,
     TestesComponent,
-    NewScheduleClienteComponent,
-    SidebarraMobileClienteComponent,
-    SidebarClienteComponent,
     PedidosAdmComponent,
-    PedidosClienteComponent,
+
 
 
 
@@ -73,6 +64,7 @@ import { HttpClientModule } from '@angular/common/http';
     BotaoAgendamodule,
     HeaderHomeModule,
     CardAnunciosModule,
+    HttpClientModule,
     BgManequimmodule,
     FooterModule,
     FormLoginModule,

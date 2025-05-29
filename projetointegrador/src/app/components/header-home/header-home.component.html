@@ -9,22 +9,24 @@
         <!-- Grupo 1 - Timer + Login -->
         <div class="flex items-center gap-2">
             <img *ngIf="!username" class="w-4 min-[335px]:w-5 h-4 min-[335px]:h-5" src="/assets/timer-check.svg" alt="Timer" />
+            <img *ngIf="username" class="w-4 min-[335px]:w-5 h-4 min-[335px]:h-5" src="/assets/user-circle.svg" alt="User" />
+        
             <a *ngIf="!username" routerLink="/login" routerLinkActive="active-link"
                class="hover:font-semibold text-sm xl:text-base">
                 Entrar / Registrar
             </a>
-            <p *ngIf="username"
-               class="hover:font-semibold text-sm xl:text-base">
+            <p routerLink="/adm/agendamentos" *ngIf="username"
+               class="hover:font-semibold text-sm xl:text-base cursor-pointer">
                 Olá, {{username}}
             </p>
+
+            <p *ngIf="username"
+   class="hover:font-semibold text-sm xl:text-base cursor-pointer ml-10"
+   (click)="logout()">
+  Logout
+</p>
+
         </div>
 
-        <!-- Grupo 2 - Calendário + Pedido -->
-        <div class="flex items-center gap-2">
-            <img class="w-4 min-[335px]:w-5 h-4 min-[335px]:h-5" src="/assets/calendar-day.svg" alt="Calendário" />
-            <a routerLink="orders" class="hover:font-semibold text-sm xl:text-base">
-                Consultar Pedido
-            </a>
-        </div>
     </nav>
 </header>

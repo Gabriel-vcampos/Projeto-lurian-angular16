@@ -27,7 +27,7 @@ export class FormLoginComponent {
         next: (res) => {
           console.log(' Login bem-sucedido:', res);
           sessionStorage.setItem("userData", JSON.stringify(res));
-          this.router.navigate(["/"])
+          this.router.navigate(["/adm/agendamentos"])
         },
         error: (err) => {
           console.error(' Erro no login:', err);

@@ -1,11 +1,15 @@
-import { Component } from '@angular/core';
+// new-schedule-cliente.component.ts
+import { Component, OnInit } from '@angular/core';
+import { AgendamentoService } from 'src/app/services/agendamento.service';
+import { NewScheduleModule } from './new-schedule.module';
 
 @Component({
   selector: 'app-new-schedule',
   templateUrl: './new-schedule.component.html',
-  styleUrls: ['./new-schedule.component.scss']
+  styleUrls: ['./new-schedule.component.scss'],
 })
-export class NewScheduleComponent {
+export class NewScheduleComponent implements OnInit {
+  userData: any = [];
 
   agendamento = {
     nomeCompleto: '',
@@ -14,18 +18,45 @@ export class NewScheduleComponent {
     numero: '',
     cep: '',
     contato: '',
-    descricaoPedido: '',
+    descricao: '',
     profissional: '',
     data: '',
-    horario: '',
-    numeroPedido: '#12541897',
+    horaMinuto: '',
+    numeroPedido: '',
+      status: 'ENVIADO',
+    clienteId: 0
   };
 
-  salvar() {
-    console.log('Agendamento enviado:', this.agendamento);
+  constructor(private agendamentoService: AgendamentoService) {}
+
+    private gerarNumeroPedido(): string {
+    const min = 10000000;
+    const max = 99999999;
+    const rnd = Math.floor(Math.random() * (max - min + 1)) + min;
+    return `#${rnd}`;
+  }
+  ngOnInit(): void {
+    const raw = sessionStorage.getItem('userData');
+    this.userData = raw ? JSON.parse(raw) : null;
+    this.agendamento.numeroPedido = this.gerarNumeroPedido();
+
+    if (this.userData) {
+      // Preenche automaticamente os campos do agendamento
+      this.agendamento.nomeCompleto = this.userData.nome;
+      this.agendamento.email        = this.userData.email;
+      this.agendamento.clienteId    = this.userData.id;
+    }
   }
 
-  cancelar() {
+  salvar(): void {
+    this.agendamentoService.cadastrarAgendamento(this.agendamento).subscribe({
+      next: res =>  alert("Pedido agendado com sucesso!"),
+      error: err => console.error('Erro ao enviar agendamento:', err)
+
+    });
+  }
+
+  cancelar(): void {
     console.log('Agendamento cancelado.');
   }
 }

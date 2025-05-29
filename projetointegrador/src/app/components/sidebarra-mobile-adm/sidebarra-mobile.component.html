@@ -27,8 +27,8 @@
 >
   <!-- Perfil do usuário -->
   <div class="p-6 text-center border-b border-gray-100">
-    <h3 class="text-gray-800 font-semibold mb-1">Henrique</h3>
-    <p class="text-gray-500 text-sm">henriquegmail.com</p>
+    <h3 *ngIf="username" class="text-gray-800 font-semibold mb-1"> {{username}}</h3>
+    <p *ngIf="email" class="text-gray-500 text-sm">{{email}}</p>
   </div>
 
   <!-- Itens de navegação -->

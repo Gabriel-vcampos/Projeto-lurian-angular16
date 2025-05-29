@@ -10,7 +10,6 @@ import { PedidosAdmComponent } from './pedidos-adm.component';
 
 
 @NgModule({
-  declarations: [PedidosAdmComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -18,8 +17,8 @@ import { PedidosAdmComponent } from './pedidos-adm.component';
     SidebarModule,
     ReactiveFormsModule,
     NovoAgendamentoModule,
+    
     SidebarraMobileModule,
   ],
-  exports:[PedidosAdmComponent]
 })
 export class PedidosAdmModule { }

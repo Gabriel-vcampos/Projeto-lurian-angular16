@@ -3,12 +3,13 @@
   <p class="font-normal text-base">Insira suas informações para se cadastrar</p>
 
   <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()" class="w-full" novalidate>
-    <!-- Username -->
-    <div class="flex flex-col mt-4">
-      <label for="username">Username</label>
-      <input id="username" type="text" formControlName="username" placeholder="Seu username.." class="rounded-xl w-full p-2 border-2" />
-      <small *ngIf="cadastroForm.get('username')?.invalid && cadastroForm.get('username')?.touched" class="text-red-600">Username é obrigatório</small>
-    </div>
+
+
+      <div class="flex flex-col mt-4">
+        <label for="cliente.name">Usuario</label>
+        <input id="cliente.name" type="text" formControlName="username" placeholder="Usuario" class="rounded-xl w-full p-2 border-2" />
+        <small *ngIf="cadastroForm.get('username')?.invalid && cadastroForm.get('username')?.touched" class="text-red-600">Nome é obrigatório</small>
+      </div>
 
     <!-- Email -->
     <div class="flex flex-col mt-4">
@@ -25,49 +26,7 @@
     </div>
 
 
-    <!-- Contato -->
-    <div class="flex flex-col mt-4">
-      <label for="contato">Contato</label>
-      <input id="contato" type="text" formControlName="contato" placeholder="Telefone ou contato" class="rounded-xl w-full p-2 border-2" />
-    </div>
 
-    <!-- Cliente -->
-    <h4 class="font-semibold text-lg mt-6">Informações Pessoais</h4>
-
-    <div formGroupName="cliente">
-      <div class="flex flex-col mt-4">
-        <label for="cliente.name">Nome Completo</label>
-        <input id="cliente.name" type="text" formControlName="name" placeholder="Nome completo" class="rounded-xl w-full p-2 border-2" />
-        <small *ngIf="cadastroForm.get('cliente.name')?.invalid && cadastroForm.get('cliente.name')?.touched" class="text-red-600">Nome é obrigatório</small>
-      </div>
-
-      <div class="flex flex-col mt-4">
-        <label for="cliente.cpf">CPF</label>
-        <input id="cliente.cpf" type="text" formControlName="cpf" placeholder="Apenas números" class="rounded-xl w-full p-2 border-2" />
-        <small *ngIf="cadastroForm.get('cliente.cpf')?.invalid && cadastroForm.get('cliente.cpf')?.touched" class="text-red-600">CPF deve ter 11 dígitos</small>
-      </div>
-
-      <div class="flex flex-col mt-4">
-        <label for="cliente.dataNascimento">Data de Nascimento</label>
-        <input id="cliente.dataNascimento" type="date" formControlName="dataNascimento" class="rounded-xl w-full p-2 border-2" />
-        <small *ngIf="cadastroForm.get('cliente.dataNascimento')?.invalid && cadastroForm.get('cliente.dataNascimento')?.touched" class="text-red-600">Data de nascimento é obrigatória</small>
-      </div>
-
-      <h4 class="font-semibold text-lg mt-6">Endereço</h4>
-      <div formGroupName="endereco">
-        <div class="flex flex-col mt-4">
-          <label for="cliente.endereco.rua">Rua</label>
-          <input id="cliente.endereco.rua" type="text" formControlName="rua" placeholder="Rua" class="rounded-xl w-full p-2 border-2" />
-          <small *ngIf="cadastroForm.get('cliente.endereco.rua')?.invalid && cadastroForm.get('cliente.endereco.rua')?.touched" class="text-red-600">Rua é obrigatória</small>
-        </div>
-
-        <div class="flex flex-col mt-4">
-          <label for="cliente.endereco.numero">Número</label>
-          <input id="cliente.endereco.numero" type="text" formControlName="numero" placeholder="Número" class="rounded-xl w-full p-2 border-2" />
-          <small *ngIf="cadastroForm.get('cliente.endereco.numero')?.invalid && cadastroForm.get('cliente.endereco.numero')?.touched" class="text-red-600">Número é obrigatório</small>
-        </div>
-      </div>
-    </div>
 
     <!-- Termos -->
     <div class="flex items-start gap-2 mt-4 mb-4">
