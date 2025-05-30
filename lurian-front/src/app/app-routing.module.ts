@@ -20,10 +20,16 @@ const routes: Routes = [
     component: NewScheduleComponent,
     canActivate: [AuthGuard] // <-- aqui está a proteção
   },
+  {
+  path: 'adm/pedidos',
+    component: PedidosAdmComponent,
+    canActivate: [AuthGuard] // <-- aqui está a proteção
+  },
     {
         path: 'cadastro',
         title: "Seja nosso cliente",
-        component: CadastroComponent
+        component: CadastroComponent,
+        canActivate: [AuthGuard]
     },
     {
         path: 'login',

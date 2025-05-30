@@ -1,32 +1,52 @@
+<!-- Header -->
 <header class="flex flex-col sm:flex-row w-full justify-between items-stretch sm:items-center gap-3 sm:gap-4 mt-4 sm:mt-8 px-4">
   <!-- Campo de busca -->
   <div class="flex flex-col ml-10 sm:flex-row items-center sm:items-stretch w-full sm:w-auto gap-3 sm:gap-3">
     <div class="relative w-40 sm:flex-1">
       <input
-        class="input-pesquisar  w-full border-2 rounded-sm shadow-md py-1 px-3 pl-10 pr-4" [class.hidden]="hideSearchInput"
+        class="input-pesquisar w-full border-2 rounded-sm shadow-md py-1 px-3 pl-10 pr-4"
+        [class.hidden]="hideSearchInput"
         style="background-image: url('assets/search.svg'); background-repeat: no-repeat; background-position: 10px center;"
         placeholder="Procurar"
         name="buscaLocal"
         id="buscaLocal"
       />
     </div>
-    <button class="w-40 sm:w-auto rounded-sm bg-gray-100 text-black px-4 py-2 shadow-md hover:bg-gray-200 sm:ml-2" [class.hidden]="hideSearchInput">
+    <button
+      class="w-40 sm:w-auto rounded-sm bg-gray-100 text-black px-4 py-2 shadow-md hover:bg-gray-200 sm:ml-2"
+      [class.hidden]="hideSearchInput"
+    >
       Procurar
     </button>
   </div>
 
   <!-- Perfil -->
-  <div class="w-full sm:w-auto flex justify-center sm:justify-end  sm:mr-28 cursor-pointer">
-    <a class="flex items-center gap-2 text-sm sm:text-base transition-opacity" routerLink="/adm/pedidos">
-      <img src="assets/user-circle.svg" alt="Perfil" class="w-6 h-6">
+  <div class="w-full sm:w-auto flex justify-center sm:justify-end sm:mr-28 cursor-pointer">
+    <a
+      class="flex items-center gap-2 text-sm sm:text-base transition-opacity"
+      routerLink="/adm/pedidos"
+    >
+      <img src="assets/user-circle.svg" alt="Perfil" class="w-6 h-6" />
       <span class="hover:font-semibold text-sm xl:text-base">Olá, {{username}}</span>
     </a>
 
-    <p *ngIf="username"
-   class="hover:font-semibold text-sm xl:text-base cursor-pointer ml-10"
-   (click)="logout()">
-  Logout
-</p>
-
+    <p
+      *ngIf="username"
+      class="hover:font-semibold text-sm xl:text-base cursor-pointer ml-10"
+      (click)="logout()"
+    >
+      Logout
+    </p>
   </div>
 </header>
+
+<!-- Sessão para ações administrativas -->
+
+
+  <button
+    class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded shadow-md transition duration-200"
+    routerLink="/cadastro"
+  >
+    + Cadastrar Admin
+  </button>
+

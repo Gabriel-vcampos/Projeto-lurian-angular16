@@ -71,11 +71,7 @@ pesquisarPedido() {
     console.warn('Pedido não encontrado.');
   }
 }
-logout(): void {
-    sessionStorage.clear(); // ou localStorage.clear()
-    this.router.navigate(['/login']);
-    window.location.reload();
-  }
+
 
 }
 

@@ -28,7 +28,7 @@ ngOnInit(): void {
 
 logout(): void {
     sessionStorage.clear(); // ou localStorage.clear()
-    this.router.navigate(['/home']);
+    this.router.navigate(['/']);
     window.location.reload();
   }
 
