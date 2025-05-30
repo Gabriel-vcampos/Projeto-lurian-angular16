@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AgendamentoService } from 'src/app/services/agendamento.service';
 
 @Component({
@@ -10,7 +11,9 @@ export class PedidosAdmComponent implements OnInit {
   pedidos: any;
 
   
-  constructor(private agendamentoService: AgendamentoService ){}
+
+  
+  constructor(private agendamentoService: AgendamentoService,private router: Router ){}
   agendamento = {
   nomeCompleto: '',
   email: '',
@@ -27,6 +30,7 @@ export class PedidosAdmComponent implements OnInit {
 };
 
 ngOnInit(): void {
+
       this.agendamentoService.getAllAgendamentos().subscribe({
 
     
@@ -67,6 +71,11 @@ pesquisarPedido() {
     console.warn('Pedido não encontrado.');
   }
 }
-
+logout(): void {
+    sessionStorage.clear(); // ou localStorage.clear()
+    this.router.navigate(['/login']);
+    window.location.reload();
+  }
 
 }
+

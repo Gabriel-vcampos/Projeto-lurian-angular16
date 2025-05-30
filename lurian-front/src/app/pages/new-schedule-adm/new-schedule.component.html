@@ -158,6 +158,11 @@
           </div>
         </div>
 
+
+        <div *ngIf="showSuccessPopup" class="popup-success">
+  <span class="popup-icon">✔️</span>
+  <span>Agendamento realizado com sucesso!</span>
+</div>
         <!-- Botões de Ação -->
         <div class="flex sm:flex-row items-center mt-3 justify-center gap-3 px-0">
           <button type="button" (click)="cancelar()"
