@@ -48,13 +48,21 @@ export class NewScheduleComponent implements OnInit {
     }
   }
 
-  salvar(): void {
-    this.agendamentoService.cadastrarAgendamento(this.agendamento).subscribe({
-      next: res =>  alert("Pedido agendado com sucesso!"),
-      error: err => console.error('Erro ao enviar agendamento:', err)
+  showSuccessPopup = false;
 
-    });
-  }
+salvar(): void {
+  this.agendamentoService.cadastrarAgendamento(this.agendamento).subscribe({
+    next: res => {
+      this.showSuccessPopup = true;
+
+      // Esconde o popup após 3 segundos
+      setTimeout(() => {
+        this.showSuccessPopup = false;
+      }, 3000);
+    },
+    error: err => console.error('Erro ao enviar agendamento:', err)
+  });
+}
 
   cancelar(): void {
     console.log('Agendamento cancelado.');
