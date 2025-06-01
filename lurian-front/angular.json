@@ -49,6 +49,7 @@
                 }
               ],
               "outputHashing": "all",
+              
                "baseHref": "./"
             },
             "development": {
