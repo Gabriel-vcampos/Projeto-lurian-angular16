@@ -1,0 +1,79 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter debug_adapter
+
+## exception
+
+RPCError: getIsolate: (-32603) Unexpected DWDS error for getIsolate: Bad state: No running isolate (inspector is not set).
+
+```
+#0      new _OutstandingRequest (package:vm_service/src/vm_service.dart:265:34)
+#1      VmService._call.<anonymous closure> (package:vm_service/src/vm_service.dart:1921:25)
+#2      VmService._call (package:vm_service/src/vm_service.dart:1933:8)
+#3      VmService.getIsolate (package:vm_service/src/vm_service.dart:1009:7)
+#4      IsolateManager._sendLibraryDebuggables (package:dds/src/dap/isolate_manager.dart:1034:35)
+#5      IsolateManager._configureIsolate (package:dds/src/dap/isolate_manager.dart:555:9)
+#6      IsolateManager.registerIsolate (package:dds/src/dap/isolate_manager.dart:246:13)
+#7      IsolateManager.handleEvent (package:dds/src/dap/isolate_manager.dart:189:13)
+#8      DartDebugAdapter.handleIsolateEvent (package:dds/src/dap/adapters/dart.dart:2488:26)
+<asynchronous suspension>
+#9      DartDebugAdapter._withErrorHandling (package:dds/src/dap/adapters/dart.dart:2819:14)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, 3.32.0, on Microsoft Windows [versÆo 10.0.19045.5854], locale pt-BR) [28,4s]
+    • Flutter version 3.32.0 on channel stable at C:\Users\Quaresma\Downloads\flutter_windows_3.32.0-stable\flutter
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision be698c48a6 (6 days ago), 2025-05-19 12:59:14 -0700
+    • Engine revision 1881800949
+    • Dart version 3.8.0
+    • DevTools version 2.45.1
+
+[✓] Windows Version (10 Home Single Language 64 bits, 22H2, 2009) [138,8s]
+
+[!] Android toolchain - develop for Android devices (Android SDK version 35.0.1) [117,8s]
+    • Android SDK at C:\Users\Quaresma\AppData\Local\Android\Sdk
+    • Platform android-35, build-tools 35.0.1
+    • ANDROID_HOME = C:\Users\Quaresma\AppData\Local\Android\Sdk
+    • Java binary at: C:\Program Files\Android\Android Studio\jbr\bin\java
+      This is the JDK bundled with the latest Android Studio installation on this machine.
+      To manually set the JDK path, use: `flutter config --jdk-dir="path/to/jdk"`.
+    • Java version OpenJDK Runtime Environment (build 21.0.6+-13368085-b895.109)
+    ! Some Android licenses not accepted. To resolve this, run: flutter doctor --android-licenses
+
+[✓] Chrome - develop for the web [3,0s]
+    • Chrome at C:\Program Files\Google\Chrome\Application\chrome.exe
+
+[✗] Visual Studio - develop Windows apps [3,0s]
+    ✗ Visual Studio not installed; this is necessary to develop Windows apps.
+      Download at https://visualstudio.microsoft.com/downloads/.
+      Please install the "Desktop development with C++" workload, including all of its default components
+
+[✓] Android Studio (version 2024.3.2) [2,7s]
+    • Android Studio at C:\Program Files\Android\Android Studio
+    • Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    • Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    • Java version OpenJDK Runtime Environment (build 21.0.6+-13368085-b895.109)
+
+[✓] VS Code (version 1.100.2) [2,7s]
+    • VS Code at C:\Users\Quaresma\AppData\Local\Programs\Microsoft VS Code
+    • Flutter extension version 3.110.0
+
+[✓] Connected device (3 available) [38,8s]
+    • Windows (desktop) • windows • windows-x64    • Microsoft Windows [versÆo 10.0.19045.5854]
+    • Chrome (web)      • chrome  • web-javascript • Google Chrome 137.0.7151.41
+    • Edge (web)        • edge    • web-javascript • Microsoft Edge 136.0.3240.92
+
+[✓] Network resources [26,7s]
+    • All expected network resources are available.
+
+! Doctor found issues in 2 categories.
+```

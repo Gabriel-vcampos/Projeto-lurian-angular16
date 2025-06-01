@@ -1,0 +1,37 @@
+name: app_alurian
+description: "A new Flutter project."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.8.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  google_fonts: ^6.2.1
+  carousel_slider: ^5.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/logo.png
+    - assets/images/perfil.png
+    - assets/images/imagem1.png
+    - assets/images/imagem01.png
+    - assets/images/imagem02.png
+    - assets/images/imagem03.png
+    - assets/images/imagem04.png
+    - assets/images/material.png
+    - assets/images/qualidade.png
+    - assets/images/lurian.png
+    # Adicione APENAS a extensão correta que você tem:
+    - assets/images/kauan.png    # Se estiver usando PNG
+    # - assets/images/customizacao.jpg  # Se estiver usando JPG
+    # - assets/images/customizacao.jpeg # Se estiver usando JPEG
