@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "lurian-front/package.json",
+      "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
         "distDir": "dist/projetointegrador"
@@ -10,6 +10,9 @@
     }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "/index.html" }
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
   ]
 }
