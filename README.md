@@ -1,5 +1,12 @@
 # 🧵 Lurian – Alfaiataria Sob Medida
 
+## 🔗 Demonstração do Front-end
+
+Acesse uma versão demonstrativa da interface do site desenvolvida em Angular, hospedada na Vercel:
+
+👉 [Visualizar Front-end na Vercel](https://projeto-lurian-completo.vercel.app/)
+
+
 ## 📌 Visão Geral
 
 O projeto **Lurian** tem como objetivo central proporcionar uma experiência refinada e moderna para os clientes de um ateliê de alfaiataria sob medida, desde a escolha dos tecidos até a entrega da peça final. A proposta é fortalecer a presença digital da marca e otimizar processos internos por meio do desenvolvimento de um sistema de gestão personalizado e um site profissional.
