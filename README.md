@@ -4,7 +4,7 @@
 
 Acesse uma versão demonstrativa da interface do site desenvolvida em Angular, hospedada na Vercel:
 
-👉 [Visualizar Front-end na Vercel](https://projeto-lurian-completo.vercel.app/)
+👉 [Visualizar Front-end no Vercel](https://projeto-lurian-completo.vercel.app/)
 
 
 ## 📌 Visão Geral
